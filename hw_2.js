@@ -1,4 +1,4 @@
-"use strict";
+"use strict"
 
 // // Task 1
 
@@ -6,7 +6,7 @@
 // let y = 58;
 // let z = 42;
 
-// console.log(x, y, z);
+// console.log(x + y + z);
 
 // // Task 2
 
@@ -14,7 +14,9 @@
 // let minutes = 60;
 // let hours = 24;
 // let days = 365;
-// let myAgeInSeconds = seconds * minutes * hours * days;
+// let age = 25;
+
+// let myAgeInSeconds = seconds * minutes * hours * days * age;
 
 // console.log(myAgeInSeconds);
 
@@ -27,7 +29,7 @@
 // console.log(count);
 // console.log(typeof count);
 
-// count.toString; // Метод 2
+// count = count.toString(); // Метод 2
 // console.log(count);
 // console.log(typeof count);
 
@@ -35,7 +37,7 @@
 // console.log(userName);
 // console.log(typeof userName);
 
-// userName * 1; // Метод 2
+// userName = userName * 1; // Метод 2
 // console.log(userName);
 // console.log(typeof userName);
 
@@ -45,10 +47,7 @@
 // let b = 2;
 // let c = "белых медведей";
 
-// a = "1";
-// b = "2 ";
-
-// let twelveBears = a + b + c;
+// let twelveBears = a + b + " " + c;
 // console.log(twelveBears);
 
 // Task 5
@@ -59,8 +58,7 @@
 // let word4 = "попрек";
 // let word5 = "рубило";
 
-// let lengthWords = word1.length+word2.length+word3.length+word4.length+word5.length;
-// console.log(lengthWords);
+// let lengthWords = word1.length + word2.length + word3.length + word4.length + word5.length;
 
 // Task 6
 
