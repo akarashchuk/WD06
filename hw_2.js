@@ -47,8 +47,15 @@
 // let b = 2;
 // let c = "белых медведей";
 
+// a = String(a);
+// b = String(b);
+
 // let twelveBears = a + b + " " + c;
 // console.log(twelveBears);
+
+// // Или
+
+// console.log(`${a}${b} ${c}`)
 
 // Task 5
 
