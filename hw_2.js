@@ -27,13 +27,13 @@ console.log(myAgeInSeconds);
 let count = 42;
 let userName = '42';
 
-typeof 42;
-typeof count;
+let count1 = String(count);
+let userName1 = +(userName);
 
-typeof userName;
-typeof '42';
+console.log(typeof count);
 
-console.log(count , userName)
+console.log(typeof userName1);
+
 
 //Task 4
 
@@ -41,8 +41,7 @@ let a = 1;
 let b = 2;
 let c = "белых медведей";
 
-
-+console.log( a + b + c );
++console.log( `${a}${b}${c}` );
 
 //Task 5
 
