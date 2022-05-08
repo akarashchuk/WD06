@@ -66,6 +66,10 @@ let Name1 = `Variable: Name have type: ${typeof Name}`;
 let Age1 = `Variable: Age have type: ${typeof Age}`;
 let Logic1 = `Variable: Logic have type: ${typeof Logic}`;
 
+console.log(Name1);
+console.log(Age1);
+console.log(Logic1);
+
 
 // Task 7
 
