@@ -1,26 +1,26 @@
 //hw-2.js - Балахомская Настя
 //каждый task в отдельных /*  */
 
-
+/*
 //task 1
  let x = 20;
  let y = 58;
  let z = 42;
 
- console.log(x+y+z);
- 
+ console.log(x + y + z);
+ */
 
 //-----------------------------------------------------------------
  
 /*
  //task 2
- let count_second_in_min = 60;
- let count_min_in_hour = 60;
- let count_hour_in_day = 24;
- let count_day_in_year = 365;
+ let countSecondInMin = 60;
+ let countMinInHour = 60;
+ let countHourInDay = 24;
+ let countDayInYear = 365;
  let age = 18;
 
- let myAgeInSeconds = age * count_day_in_year * count_hour_in_day * count_min_in_hour * count_second_in_min;
+ let myAgeInSeconds = age * countDayInYear * countHourInDay * countMinInHour * countSecondInMin;
  
  console.log(myAgeInSeconds);
  */
@@ -61,7 +61,7 @@ let c = "белых медведей";
 a = String(a);
 b = String(b);
 
-console.log(a+b+' '+c);
+console.log(a + b + ' ' + c);
 */
 //-----------------------------------------------------------------
 
@@ -72,14 +72,14 @@ let b = 'морпех';
 let c = 'наледь';
 let d = 'попрек'; 
 let f = 'рубило';
-let lengthWords = (a+b+c+d+f);
+let lengthWords = a + b + c + d + f;
 
-console.log (`Слово "${a}" содержит `+ a.length + ` символов`);
-console.log (`Слово "${b}" содержит `+ a.length + ` символов`);
-console.log (`Слово "${c}" содержит `+ a.length + ` символов`);
-console.log (`Слово "${d}" содержит `+ a.length + ` символов`);
-console.log (`Слово "${f}" содержит `+ a.length + ` символов`);
-console.log(`Длина всех слов равна ` + lengthWords.length + ` символов`);
+console.log(`Слово "${a}" содержит ${a.length} символов`);
+console.log(`Слово "${b}" содержит ${b.length} символов`);
+console.log(`Слово "${c}" содержит ${c.length} символов`);
+console.log(`Слово "${d}" содержит ${d.length} символов`);
+console.log(`Слово "${f}" содержит ${f.length} символов`);
+console.log(`Длина всех слов равна ${lengthWords.length} символов`);
 */
 
 //-----------------------------------------------------------------
@@ -102,8 +102,8 @@ console.log (`Variable: "${isActive}" have type: ${typeof(isActive)}`);
 let firstName ='';
 let age = '';
 
-console.log(prompt ('Введите ваше имя',firstName));
-console.log(prompt ('Введите ваш возраст',age));
+console.log(prompt('Введите ваше имя', firstName));
+console.log(prompt('Введите ваш возраст', age));
 */
 
 //-----------------------------------------------------------------
@@ -131,9 +131,8 @@ let codeWord2 = "неужели";
 let codeWord3 = "огурцы";
 let codeWord4 = "липкие";
 let codeWord5 = "?!";
-let cipher = '';
 
-cipher = codeWord1[1] + codeWord2[1] + codeWord3[1] + codeWord4[1] +codeWord5 [1];
+let cipher = codeWord1[1] + codeWord2[1] + codeWord3[1] + codeWord4[1] +codeWord5 [1];
 
 console.log(cipher);
 */
