@@ -15,41 +15,23 @@ const SEC_IN_MIN = 60;
 const MIN_IN_HR = 60;
 const HR_IN_DAY = 24;
 const DAY_IN_YR = 365;
-let yearsNumber = 53; //полных лет
-let daysNumber = 110; //дней в неполном году - д.р. 10.01, сегодня 30.04
-const ageInSeconds = (yearsNumber * DAY_IN_YR + daysNumber) * HR_IN_DAY * MIN_IN_HR * SEC_IN_MIN
+let yearsNumber = 53;
+
+const ageInSeconds = yearsNumber * DAY_IN_YR * HR_IN_DAY * MIN_IN_HR * SEC_IN_MIN
 
 console.log(ageInSeconds);
 
 
 // Task 3
 
-let count = 42; // число
+let count = 42;
+let userName = '42';
 
-console.log(count);
-console.log(typeof count); 
+let count1 = String(count);
+console.log(typeof count1);
 
-// // число на строку 1й вариант
-count = String(count);
-console.log(typeof count);
-
-// // число на строку 2й вариант
-let countString = "count";              // новая переменная
-console.log(typeof countString); 
-
-
-let userName = '42'; // строка
-
-console.log(userName);
-console.log(typeof userName);
-
-// // строка на число 1й вариант
-userName = Number(userName);
-console.log(typeof userName);
-
-// // строка на число 2й вариант
-let userNameNumber = Number(userName);  // новая переменная
-console.log(typeof userNameNumber);
+let userName1 = +userName;
+console.log(typeof userName1);
 
 
 // Task 4
@@ -58,9 +40,7 @@ let a = 1;
 let b = 2;
 let c = "белых медведей";
 
-a = String(a);
-b = String(b);
-console.log(a, b, c);
+console.log(`${a}${b} ${c}`);
 
 
 // Task 5
@@ -78,23 +58,13 @@ console.log(lengthWords);
 
 // Task 6
 
-// 1 тип
-let line = `Variable: %variable name% have type: %type variable%`;
-console.log(line);
+let Name = 'Jonh';
+let Age = 25;
+let Logic = 25 >= 18;
 
-// 2 тип
-let varName = "%variable name%";
-let varType = "%type variable%";
-console.log(`Variable: ${varName} have type: ${varType}`);
-
-
-// 3 тип
-let sentence = "sentence";
-if (sentence === "sentence") {
-   console.log(`Variable: %variable name% have type: %type variable%`)
-} else {
-   console.log(null);
-}
+let Name1 = `Variable: Name have type: ${typeof Name}`;
+let Age1 = `Variable: Age have type: ${typeof Age}`;
+let Logic1 = `Variable: Logic have type: ${typeof Logic}`;
 
 
 // Task 7
