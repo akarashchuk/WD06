@@ -79,4 +79,4 @@
 // let cipher = (codeWord1.charAt(1) + codeWord2.charAt(1) + codeWord3.charAt(1) + codeWord4.charAt(1)
 // 	+ codeWord5.charAt(1));
 // console.log(cipher);
-
+//
