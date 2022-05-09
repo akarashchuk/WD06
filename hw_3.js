@@ -125,16 +125,11 @@
 
 // Task 2
 
-// let anyNumber = prompt("Введите любое число","");
-// let summ = prompt("Сколько прибавить?","");
-// let distr = prompt("Сколько отнять?","");
-// let multip = prompt("На сколько умножить?","");
-// let divide = prompt("На сколько разделить?","");
-// anyNumber = +anyNumber;
-// summ = +summ;
-// distr = +distr;
-// multip = +multip;
-// divide = +divide;
+// let anyNumber = +prompt("Введите любое число","");
+// let summ = +prompt("Сколько прибавить?","");
+// let distr = +prompt("Сколько отнять?","");
+// let multip = +prompt("На сколько умножить?","");
+// let divide = +prompt("На сколько разделить?","");
 
 // let result = (anyNumber + summ - distr) * multip / divide;
 
