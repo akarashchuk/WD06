@@ -1,10 +1,12 @@
+"use strict";
+
 //Task 1
 
 let x = 20;
 let y = 58;
 let z = 42;
 let sum = x + y + z;
-console.log(sum);
+console.log (sum);
 
 //Task 2
 
@@ -49,14 +51,14 @@ console.log (summary.length);
 
 let firstVariable = 1;
 let secondVariable = true;
-let thirdVariable = 1/0; 
-console.log('Variable: firstVariable has type: ' +typeof(firstVariable));
-console.log('Variable: secondVariable has type: ' +typeof(secondVariable));
-console.log('Variable: thirdVariable has type: ' +typeof(thirdVariable));
+let thirdVariable = 1 / 0; 
+console.log('Variable: firstVariable has type: ' + typeof(firstVariable));
+console.log('Variable: secondVariable has type: ' + typeof(secondVariable));
+console.log('Variable: thirdVariable has type: ' + typeof(thirdVariable));
 
 //Task 7
 
 let age = prompt('Введите возраст');
-let name = prompt ('Введите имя');
-console.log (age);
-console.log (name);
+let name = prompt('Введите имя');
+console.log(age);
+console.log(name);
