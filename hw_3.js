@@ -102,11 +102,11 @@ switch (travel) {
 
 // Task 2 
 
-let number = prompt('Введите число', '0');
-let subtraction = prompt('Cколько отнять от предыдущего результата?', '');
-let addition = prompt('Cколько прибавить к предыдущему результату?', '');
-let multiply = prompt('На сколько умножить предыдущй результат?', '');
-let divide = prompt('На сколько разделить предыдущй результат?', '');
+let number = +prompt('Введите число', '0');
+let subtraction = +prompt('Cколько отнять от предыдущего результата?', '');
+let addition = +prompt('Cколько прибавить к предыдущему результату?', '');
+let multiply = +prompt('На сколько умножить предыдущй результат?', '');
+let divide = +prompt('На сколько разделить предыдущй результат?', '');
 
 let result = (((number - subtraction + addition) * multiply) / divide);
 
