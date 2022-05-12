@@ -9,11 +9,6 @@ let tempVar4 = undefined;
 let tempVar5 = null;
 let tempVar;
 
-// for (let i = 1; i <= 5; i++) {
-//     tempVar = tempVar + i;
-//     console.log(`Variable: tempVar${i} have type: ${typeof tempVar}`); 
-// } 
-
 console.log(`Variable: tempVar1 have type: ${typeof(tempVar1)}`);
 console.log(`Variable: tempVar2 have type: ${typeof(tempVar2)}`);
 console.log(`Variable: tempVar3 have type: ${typeof(tempVar3)}`);
@@ -28,7 +23,7 @@ console.log(height > width ? height : width);
 
 //Task 3
 for (let i = 1; i <= 20; i++){
-    if(i%3 !== 0){
+    if(i % 3 !== 0){
         continue;
     }
     else{
@@ -49,7 +44,7 @@ console.log(shouldGoToWork);
 
 //Task 5
 let myNumber = prompt('Введите число');
-console.log((myNumber%5 !==0) && (myNumber%3 !== 0) ? ' ' :myNumber%3 !== 0 ? 'Buz' : myNumber%5 !== 0 ? 'Fiz' :  'FizBuz');
+console.log((myNumber % 5 !== 0) && (myNumber % 3 !== 0) ? ' ' :myNumber % 3 !== 0 ? 'Buz' : myNumber % 5 !== 0 ? 'Fiz' :  'FizBuz');
 
 //Task 6
 let myAge = prompt('Введите свой возраст ');
