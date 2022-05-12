@@ -89,9 +89,9 @@
 //ADVANCED level
 
 // //Task_1a
-// let a = "пОлИнА нАбЕрЕжНаЯ";
-// a = a.toLowerCase();
-// console.log(a[0].toUpperCase() + a.slice(1, 6) + " " +  a[7].toUpperCase() + a.slice(8));
+let a = "пОлИнА нАбЕрЕжНаЯ";
+a = a.toLowerCase();
+console.log(`Привет, ` + a[0].toUpperCase() + a.slice(1, 6) + " " + a[7].toUpperCase() + a.slice(8) + `!`);
 
 //Task_2a
 // let a = prompt("Пожалуйств ввведите число");
@@ -100,9 +100,9 @@
 // let d = prompt("На сколько необходимо умножить");
 // let e = prompt("На скоько необходимо разделить");
 // if (e == 0) {
-//     alert("На ноль делить нельзя");
+// 	alert("На ноль делить нельзя");
 // }
-// alert(`((((${a} - ${b}) + ${c}) * ${d}) / ${e} = ${(((a - b) + c) * d) / e}`);
+// alert(`((((${a} - ${b}) + ${c}) * ${d}) / ${e} = ${(((a - b) + +c) * +d) / e}`);
 
 // //Task_3a
 // for (let i = 1; i <= 6; i++) {
