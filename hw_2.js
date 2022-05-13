@@ -1,3 +1,5 @@
+"use strict"
+
 //Task 1 
 
 let x = 20;
@@ -18,7 +20,7 @@ let year = 365;
 
 let age = 25; 
 
-myAgeInSeconds = age * year * day * min * sec ;
+let myAgeInSeconds = age * year * day * min * sec ;
 
 console.log(myAgeInSeconds);
 
@@ -41,7 +43,7 @@ let a = 1;
 let b = 2;
 let c = "белых медведей";
 
-+console.log( `${a}${b}${c}` );
+console.log(`${a}${b} ${c}`);
 
 //Task 5
 
