@@ -19,7 +19,7 @@ let width = 20;
 
 let maxNum = [height , width];
 
-let m = Math.max.apply(null , maxNum);
+let m = Math.max.apply(null, maxNum);
 
 console.log(m);
 
@@ -116,4 +116,3 @@ for (let i = 0; i < 6; i++) {
    console.log(`${line}#`)
  }
 
- 
