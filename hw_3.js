@@ -37,7 +37,7 @@ let pen = true;
 let apple = false;
 let orange = true;
 let shouldGoToWork;
-shouldGoToWork = (key && documents && pen) && apple || orange;
+shouldGoToWork = key && documents && pen && (apple || orange);
 if (shouldGoToWork) {
     console.log('We can go to work');
 }
@@ -93,7 +93,7 @@ if (shouldGoToWork) {
 
 // let chislo = prompt('Введите число');
 // let question1 = prompt('Сколько отнять?');
-// let question2 = prompt('Сколько прибавить?');
+// let question2 = +prompt('Сколько прибавить?');
 // let question3 = prompt('На сколько умножить?');
 // let question4 = prompt('Разделить от предыдущего результата?');
 // let result = (((chislo - question1) + question2) * question3) / question4;
