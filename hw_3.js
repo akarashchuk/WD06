@@ -8,7 +8,7 @@ let age = 17;
 let stranger = undefined;
 let stranger2 = null;
 
-console.log(typeof comparisonString, comparisonFalse, age, stranger, stranger2);
+console.log(typeof comparisonString, typeof comparisonFalse, typeof age, typeof stranger, typeof stranger2);
 
 // Task 2
 
@@ -37,7 +37,7 @@ let pen = true;
 let apple = false;
 let orange = true;
 
-let shouldGoToWork = documents && key && pen && apple || orange;
+let shouldGoToWork = documents && key && pen && (apple || orange);
 console.log(shouldGoToWork);
 
 // Task 5
