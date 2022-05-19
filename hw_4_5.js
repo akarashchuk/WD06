@@ -25,50 +25,59 @@ getCredit(5000);
 
 //Task 3
 
-// function trimString(string, from, before) {
-//     console.log(string.slice(from, before));
-// }
+function trimString(string, from, before) {
+    return(string.slice(from, before));
+}
 
-// trimString('JS лучший язык', 3, 9);
+console.log(trimString('JS лучший язык', 3, 9));
 
 //Task 4
 
-let sum = 0;
-function getSumNumbers(chislo) {
-    let arr = chislo.toString().split('');
+function getSumNumbers(number) {
+    let sum = 0;
+    let arr = number.toString().split('');
     for (let i = 0; i < arr.length; i++) {
-        let arrChisla = Number(arr[i]);
-        sum += arrChisla;
+        sum += Number(arr[i]);
     }
-    console.log(sum);
+    return sum;
 }
 
-getSumNumbers(2021); 
+console.log(getSumNumbers(2021)); 
 
 //Task 5
 
-// let sum = 0;
-// function getSum(a, b) {
-//     while (a <= b) {
-//         sum += a;
-//         a++;
-//     }
-//     console.log(sum);
-// }
+let sum = 0;
+function getSum(a, b) {
+    if(a <= b) { 
+        while(a <= b) { 
+            sum += a; 
+            a++; 
+        } 
+    } else { 
+        while(b <= a) { 
+            sum += b; 
+            b++; 
+        } 
+    }  
+    console.log(sum);
+}
 
-// getSum(1, 5);
+getSum(5, 1);
 
 //Task 6
 
+// let foo = function(name) {
+//     console.log(foo.name);
+// }
+
+// let boo = function(name) {
+//     console.log(boo.name);
+// }
 // function fooboo(boolean, foo, boo) {
 //     if (boolean) {
-//         let foo = function(name) {
-//             console.log(name);
-//         }
+//         foo();
 //     } else {
-//         let boo = function(surname) {
-//             console.log(surname);
-//         }
+//         boo();
 //     }
 // }
 
@@ -130,10 +139,17 @@ if(car.brand) {
 //     alexandra: 199
 // }
 
-// let sumOf = (+salaries.andrey + +salaries.sveta + +salaries.anton + 
-//     +salaries.andrei + +salaries.alexandra) / 5;
+// let sumOf = 0;
+// let i = 0;
 
-// console.log(sumOf);
+// for (let key in salaries) {
+//     i++;
+//     sumOf += salaries[key];
+// }
+
+// let average = sumOf / i;
+
+// console.log(average);
 
 //Task 12
 
@@ -141,8 +157,8 @@ if(car.brand) {
 // let password = prompt('Write your password');
 
 // let user = {
-//     login: `${login}`,
-//     password: `${password}`
+//     login: login,
+//     password: password
 // }
 
 // let accept = confirm(`Login: ${user.login};\nPassword: ${user.password}`);
@@ -199,21 +215,18 @@ for (let cat of cats) {
 const evenNumbers = [2, 4, 6, 8, 10];
 const oddNumbers = [1, 3, 5, 7, 9];
 
-let sumOfArrays = evenNumbers + ',' + oddNumbers;
+let sumOfArrays = evenNumbers.concat(oddNumbers);
 console.log(sumOfArrays);
-console.log(sumOfArrays.indexOf('8'));
+let indexOf = sumOfArrays.findIndex(function(item, index) {
+    return item == 8;
+});
+console.log(indexOf);
 
 //Task 19
 
 const binary = [0, 0, 0, 0];
 
-let sumOfBinariesWith = 0;
-let sumOfBinaries = 0;
-
-for (let i = 0; i < binary.length; i++) {
-    sumOfBinariesWith = binary[i] + '1';
-    sumOfBinaries += sumOfBinariesWith;    
-}
+let sumOfBinaries = binary.join('1');
 
 console.log(sumOfBinaries);
 
@@ -257,6 +270,16 @@ const matrix = [
     [13, 324, 65, 312],
     [9092, 22, 45, 90000],
 ];
+
+let singularMatrix = matrix.flat();
+
+let sumOfElements = singularMatrix.reduce(function(prev, item) {
+    return prev + item;
+}, 0);
+
+let average = sumOfElements / singularMatrix.length;
+
+console.log(average); 
 
 //Task 4
 
