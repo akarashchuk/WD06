@@ -2,7 +2,6 @@
 //Task 1
 
 function getSum(n) {
-
     if (typeof (n) === 'number') {
         let sum = 0
         for (let i = 0; i <= n; i++) {
@@ -18,7 +17,9 @@ function getSum(n) {
 console.log(getSum(100));
 
 //Task 2
-
+//Выполняя это задание я руководствовалась следующим))))
+//https://learn.javascript.ru/ninja-code#kratkost--sestra-talanta
+//можно в этот раз я оставлю эту функцию без изменений ?)
 function getBet(sumCredit) {
 
     return typeof (sumCredit) === 'number' ? sumCredit * 17 * 0.01 * 5 : 'Введнное значение не является числом. Попробуйте ещё раз.';
@@ -58,12 +59,10 @@ console.log(getSumNumbers(2021));
 // Task 5
 
 function getSumNumber(a, b) {
-
     let sum = 0;
     if (typeof a === 'number' && typeof b === 'number') {
 
         if (Number.isInteger(a) && Number.isInteger(b)) {
-
             let c = a;
             a < b ? c = b : a = b;
             for (let i = a; i <= c; i++) sum += i;
@@ -177,12 +176,12 @@ console.log(avgsalary);
 
 //Task 12
 
-function user(login, password) {
+function User(login, password) {
     this.login = login.trim();
     this.password = password.trim();
 }
 
-let myUser = new user(prompt('Введите свой логин'), prompt('Введите свой пароль'));
+let myUser = new User(prompt('Введите свой логин'), prompt('Введите свой пароль'));
 
 function isRigth(myLogin, myPassword, currUser) {
     myLogin.trim() === currUser.login && myPassword.trim() === currUser.password ? console.log('Добро пожалоВать') : console.log('Такого логина и пароля не существует!');
@@ -256,7 +255,7 @@ const oddNumbers = [1, 3, 5, 7, 9];
 const newNumbers = evenNumbers.concat(oddNumbers);
 
 console.log(newNumbers);
-console.log(newNumbers[8]);
+console.log(newNumbers.findIndex(i => i == 8));
 
 //Task 19
 const binary = [0, 0, 0, 0];
@@ -275,7 +274,7 @@ console.log(getString(binary));
 //Task 1
 
 function isTriangle(a, b, c) {
-    return a + b > c && a + c > b && c + b > a ? true : false;
+    return a + b > c && a + c > b && c + b > a;
 }
 
 console.log(isTriangle(5, 7, 3));
@@ -283,11 +282,17 @@ console.log(isTriangle(5, 7, 3));
 //Task 2
 
 function isPolynomial(myStr) {
+    let isPoly
     for (let i = 0; i < myStr.length / 2; i++) {
-        return myStr[i] !== myStr[myStr.length - 1 - i] ? false : true;
+        isPoly = myStr[i] === myStr[myStr.length - 1 - i];
+        if (!isPoly) {
+            break;
+        }
     }
+    return isPoly;
 }
 
+// console.log('Task 2');
 console.log(isPolynomial('шалаш'));
 
 // Task 3
