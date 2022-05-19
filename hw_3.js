@@ -35,13 +35,13 @@
 // let apple = false;
 // let orange = true;
 // let shouldGoToWork = " Выходим";
-// if (((key == true) && (documents == true) && (pen == true)) && ((apple == false) && (orange == true) || (apple == true) && (orange == false))) {
+// if ((key == true) && (documents == true) && (pen == true) && ((apple == true) || (orange == true))) {
 // 	console.log(shouldGoToWork);
 // }
 // else {
 // 	console.log("Без еды не пойду");
 //}
-//не поняла, что значит вывести в переменную
+
 
 //Task_5
 // let a = prompt("Введите, пожалуйста, число");
