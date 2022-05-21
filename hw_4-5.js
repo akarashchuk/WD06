@@ -5,7 +5,6 @@
 // Task 1 
 
 function getSum(n) {
-
     let sum = 0;
 
     for (let i = 1; i <= n; i++) {
@@ -25,34 +24,29 @@ let calcOverpay = amount => (amount * rate * years);
 
 console.log(calcOverpay(1000));
 
-// Task 3    ???
+// Task 3    
 
-function trimString(valueFrom, valueTo, str) {
-
-    for (let str = valueFrom; str <= valueTo; str++) {
-        console.log(str);
-    }
-    return str;
+function trimString(str, valueFrom, valueTo) {
+    return str.slice(valueFrom, valueTo);
 }
 
-trimString(5, 10);
+console.log(trimString('Я не плачу, это дощь((', 5, 14));
 
 // Task 4
 
 function getSumNumbers(num) {
-
     let value = 0;
     let numToStr = String(num);
 
     for (let i = 0; i < numToStr.length; i++) {
-        value += +(numToStr[i]);
+        value += +numToStr[i];
     }
     return value;
 }
 
 console.log(getSumNumbers(2021));
 
-// Task 5    ???
+// Task 5    
 
 function getSum(a, b) {
 
@@ -65,15 +59,19 @@ function getSum(a, b) {
             sum += i;
         }
     }
+
+    for (let i = b; i <= a; i++) {
+        sum += i;
+    }
+
     return sum;
 }
 
-console.log(getSum(2, 2));
+console.log(getSum(5, 2));
 
-// Task 6    ???   
+// Task 6    
 
-function fooboo(boolean) {
-
+function fooboo(boolean, foo, boo) {
     if (boolean === true) {
         foo();
     } else {
@@ -89,7 +87,7 @@ function boo() {
     console.log(boo.name);
 }
 
-fooboo(false);
+fooboo(true, foo, boo);
 
 // Task 7
 
@@ -160,7 +158,7 @@ let average = sum / Object.keys(salaries).length;
 
 console.log(average);
 
-// Task 12    ???
+// Task 12    
 
 let login = prompt('Укажите логин');
 let password = prompt('Введите пароль');
@@ -238,8 +236,14 @@ const evenNumbers = [2, 4, 6, 8, 10];
 const oddNumbers = [1, 3, 5, 7, 9];
 const allNumbers = evenNumbers.concat(oddNumbers);
 
+
 console.log(allNumbers);
-console.log(allNumbers.indexOf(8));
+
+const index = allNumbers.findIndex(function (item) {
+    return item === 8;
+});
+
+console.log(index);
 
 // Task 19
 
@@ -255,7 +259,6 @@ console.log(str);
 // Task 1
 
 function checkTriangle(a, b, c) {
-
     if ((a + b > c) && (a + c > b) && (c + b > a)) {
         return true;
     } else {
@@ -268,17 +271,14 @@ console.log(checkTriangle(3, 6, 5));
 // Task 2 
 
 function checkPalindrom(palindrom) {
+    let lengthToCompare = palindrom.length - 1;
 
-    palindrom = palindrom.toLowerCase();
-
-    for (let i = 0; i < palindrom.length / 2; i++) {
-
-        if (palindrom[i] == palindrom[palindrom.length - 1]) {
-            return true;
-        } else {
+    for (let i = 0; i <= lengthToCompare / 2; i++) {
+        if (palindrom[i] !== palindrom[lengthToCompare - i]) {
             return false;
         }
     }
+    return true;
 }
 
 console.log(checkPalindrom('заказ'));
@@ -308,7 +308,6 @@ let negative = [];
 let positive = [];
 
 for (let i = 0; i < mixedNumbers.length; i++) {
-
     if (mixedNumbers[i] < 0) {
         negative.push(mixedNumbers[i]);
     } else if (mixedNumbers[i] > 0) {
