@@ -20,16 +20,16 @@ console.log(valueTask2);
 
 // Task 3
 
-// let count = 42;
-// let userName = '42';
-// let countChange = count;
-// countChange = String(count);
-// let userNameChange = userName;
-// userNameChange = Number(userName);
-// console.log(typeof count);
-// console.log(typeof userName);
-// console.log(typeof countChange);
-// console.log(typeof userNameChange);
+let count = 42;
+let userName = '42';
+let countChange = count;
+countChange = String(count);
+let userNameChange = userName;
+userNameChange = Number(userName);
+console.log(typeof count);
+console.log(typeof userName);
+console.log(typeof countChange);
+console.log(typeof userNameChange);
 
 // let count = 42 + '';
 // let userName = +'42';
@@ -38,14 +38,14 @@ console.log(valueTask2);
 
 // Task 4
 
-// let a = 1
-// let b = 2
-// let c = "белых медведей"
-// let space = ' '
-// a = String(a);
-// b = String(b);
-// let valueBear = a + b + space + c;
-// console.log(valueBear);
+let a = 1
+let b = 2
+let c = "белых медведей"
+let space = ' '
+a = String(a);
+b = String(b);
+let valueBear = a + b + space + c;
+console.log(valueBear);
 
 // Task 5
 
@@ -78,10 +78,10 @@ let value666 = prompt("Введите Возраст", '');
 console.log(value666);
 
 // Task 8
-let a = 4;
-let b = 3;
-a -= 1;
-b += 1;
+let a8 = 4;
+let b8 = 3;
+a8 -= 1;
+b8 += 1;
 
 // Task 9
 
