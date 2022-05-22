@@ -279,8 +279,8 @@
 // ]
 
 // let lengthMatrix = matrix.flat();
-// let sumMatrix = lengthMatrix.reduce((prev, current) => prev + current, 0);
-// console.log(sumMatrix);
+// let averageMatrix = lengthMatrix.reduce((prev, current) => prev + current, 0) / lengthMatrix.length;
+// console.log(averageMatrix);
 
 // Task 4
 
