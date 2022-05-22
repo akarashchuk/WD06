@@ -1,0 +1,25 @@
+/* * {
+    box-sizing: border-box;
+  }
+
+body {
+    margin: 10px auto;
+  }
+
+#root {
+    max-width: 1170px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px;
+    border: 2px solid #000000;
+    border-radius: 4px;
+    font-family: 'Kanit';
+    font-size: 1.5rem;
+    color: #000000;
+    background-color: #ff811b;
+  } */
