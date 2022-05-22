@@ -88,7 +88,7 @@ if (value6 > 16 && value6 < 18) {
 
 // Task 7
 
-let direction = prompt("кудв едем", '');
+let direction = prompt("куда едем", '');
 
 switch (direction) {
    case 'юг':
