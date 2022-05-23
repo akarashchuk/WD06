@@ -1,103 +1,98 @@
-"use strict"
+// "use strict"
 
 // Task_1
 
-
-// let y = prompt('Введите целое положительное число y: ', '');
-// function getSum() {
+// function getSum(y) {
 // 	let result = 0;
 // 	for (let a = 0; a < y; a++) {
 // 		result += a + 1;
 // 	}
 // 	return result;
 // }
-// alert(`Сумма всех чисел от 0 до y:  ${getSum()}`);
+
+// alert(`Сумма всех чисел от 0 до y:  ${getSum(prompt('Введите целое положительное число y:', ""))}`);
+
 
 
 // Task_2
 
-// let total = prompt('Введите сумму кредита, BYN', "");
-// let rate = 17;
-// let year = 5;
 
-// function overpayment() {
+// function overpayment(total) {
+// 	let rate = 17;
+// 	let year = 5;
 // 	let over = total * rate / 100 * year;
 // 	return over;
 // }
-// alert(`Сумма переплаты по кредиту составит, BYN: ${overpayment()}`);
+
+// alert(`Сумма переплаты по кредиту составит, BYN: ${overpayment(prompt('Введите сумму кредита, BYN', ""))}`);
 
 
 //Task_3
-// let a = prompt("Введите текст ...");
-// let b = prompt("Значение от ...");
-// let c = prompt("Значение по ...");
-// function trimString() {
-//     let d = a.slice(+(b - 1 ),+(c));
-//     return d;
-//   }
-// alert(trimString());
+
+// function trimString(a, b, c) {
+// 	return a.slice(+(b - 1), +(c));
+// }
+// alert(trimString((prompt('Введите текст ...')), (prompt('Введите значение от ...')), (prompt('Введите значение до ...'))));
+
 
 // //Task_4
-// let a = prompt("Введите число");
-// let b = 0;
-// function getSumNumbers() {
-//     while (a != 0) {
-//        c = a % 10;
-//        b = b + c;
-//        a = (a - c) / 10;
-//     }
-//     return b;
-// }
-// alert(getSumNumbers());
 
-//Task_5
-// let a = prompt("Введите первое число ...");
-// let b = prompt("Введите второе число ...");
-// let e = 0;
-//     function getSum(){
-//         if (a === b){
-//             return(a);
-//         }
-//         else if (a < b){
-//             while(a <= b){
-//                 e = e + +a;
-//                 a++;
-//             }
-//             return(e);
-//         }
-//         else if (a > b){
-//             while(b <= a){
-//                 e = e + +b;
-//                 b++;
-//             }
-//             return(e);
-//     }
+// function getSumNumbers(a) {
+// 	let b = 0;
+// 	while (a != 0) {
+// 		let c = a % 10;
+// 		b = b + c;
+// 		a = (a - c) / 10;
+// 	}
+// 	return b;
 // }
-// if(Number.isInteger(+a) && Number.isInteger(+b) ){
-//     alert(getSum());
+
+// alert(`Сумма цифр, из которых состоит число: ${getSumNumbers(prompt('Введите число', ""))}`);
+
+
+
+// Task_5
+// function getSum(a, b) {
+
+// 	let c = 0;
+
+// 	for (let i = a; i <= b; i++) {
+// 		if (a === b) {
+// 			return a;
+// 		} else {
+// 			c += i;
+// 		}
+// 	}
+
+// 	for (let i = b; i <= a; i++) {
+// 		c += i;
+// 	}
+
+// 	return c;
 // }
-// else    {
-//     alert("Числа не целые");
-// }
+
+// alert(getSum(1, 3));
+
 
 // //Task_6
-// let a = prompt('Введите True или False');
-// a = a.toLowerCase();
-// function Foo() {
-// 	console.log('Foo')
+// function foo(name) {
+// 	alert(foo.name);
 // }
-// function Boo() {
-// 	console.log('Boo')
+
+// function boo(name) {
+// 	alert(boo.name);
 // }
-// function FooBoo() {
-// 	if (a == 'true') {
-// 		return (Foo());
-// 	}
-// 	else if (a == 'false') {
-// 		return (Boo);
+// function fooboo(bool, foo, boo) {
+// 	if (bool) {
+// 		foo();
+// 	} else {
+// 		boo();
 // 	}
 // }
-// console.log(FooBoo());
+
+// fooboo(false, foo, boo);
+
+
 
 
 // Task 7
@@ -196,10 +191,8 @@
 // // Task 12
 
 // function valid(login, password) {
-// 	this.login = login.trim();
-// 	this.login = login.toLowerCase();
-// 	this.password = password.trim();
-// 	this.password = password.toLowerCase();
+// 	this.login = login.trim().toLowerCase();
+// 	this.password = password.trim().toLowerCase();
 // };
 
 // let user = new valid(prompt('Введите ваш логин'), prompt('Введите ваш пароль'));
@@ -268,7 +261,14 @@
 // const evenNumbers = [2, 4, 6, 8, 10];
 // const oddNumbers = [1, 3, 5, 7, 9];
 // const array3 = evenNumbers.concat(oddNumbers);
-// console.log(array3.indexOf(8));
+// const ind = array3.findIndex(function (numb) {
+// 	return numb === 8;
+// });
+
+// console.log(ind);
+
+
+
 
 // Task 19
 // const binary = [0, 0, 0, 0];
@@ -287,24 +287,15 @@
 // ADVANCED
 //// Task_1a
 
+// function triangle(a, b, c) {
+// 	if ((a + + b > c) && (a + +c > b) && (b + +c > a)) {
+// 		return true;
+// 	} else {
+// 		return false;
+// 	}
+// }
 
-// let a = prompt("Введите первое число ...");
-// let b = prompt("Введите второе число ...");
-// let c = prompt("Введите третье число ...");
-// function triangle() {
-// 	if ((a + +b > c) && (a + +c > b) && (b + +c > a)) {
-// 		return (true);
-// 	}
-// 	else {
-// 		return (false);
-// 	}
-// }
-// if (Number.isInteger(+a) && Number.isInteger(+b) && Number.isInteger(+c)) {
-// 	console.log(triangle());
-// }
-// else {
-// 	console.log('Значения не целочисленные');
-// }
+// alert(triangle((prompt('Введите первое число ...')), (prompt('Введите второе число ...')), (prompt('Введите третье число ...'))));
 
 
 // // Task_2a
@@ -320,6 +311,22 @@
 // 	}
 // }
 // alert(poly());
+
+
+
+// function poly(a) {
+// 	a = a.split(' ').join('');
+// 	let b = a.split('').reverse().join('');
+// 	if (a === b) {
+// 		return ('Палиндром');
+// 	}
+// 	else {
+// 		return ("Не палиндром");
+// 	}
+// }
+
+// alert(`${poly(prompt('Введите текст', "").toLowerCase())}`);
+
 
 //Task_3a
 // const matrix = [
@@ -352,11 +359,4 @@
 // 	return numn < 0;
 // });
 // alert(`${pos}\n${neg}`);
-
-
-//Готово
-
-
-
-
 
