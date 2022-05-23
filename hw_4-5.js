@@ -17,11 +17,12 @@ console.log(getSum(100));
 
 // Task 2
 
+let calcOverpay = amount => {
 let rate = 0.17;
 let years = 5;
-
-let calcOverpay = amount => (amount * rate * years);
-
+let result = amount * rate * years;
+return result;
+}
 console.log(calcOverpay(1000));
 
 // Task 3    
