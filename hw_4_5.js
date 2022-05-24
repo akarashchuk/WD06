@@ -2,31 +2,31 @@
 
 //Task 1
 
-// let sum = 0;
 // function getSum(x) {
+//     let sum = 0;
 //     for (let i = 0; i <= x; i++) {
 //         sum += i;
 //     }
 
-//     console.log(sum);
+//     return sum;
 // }
 
-// getSum(100);
+// console.log(getSum(100));
 
 //Task 2
 
 const getCredit = function(sumOfCredit) {
     let needToReturn = sumOfCredit * 1.17;
     let overPaid = needToReturn - sumOfCredit;
-    console.log(overPaid);
+    return overPaid;
 }
 
-getCredit(5000);
+console.log(getCredit(5000));
 
 //Task 3
 
 function trimString(string, from, before) {
-    return(string.slice(from, before));
+    return string.slice(from, before);
 }
 
 console.log(trimString('JS лучший язык', 3, 9));
@@ -46,8 +46,9 @@ console.log(getSumNumbers(2021));
 
 //Task 5
 
-let sum = 0;
 function getSum(a, b) {
+    let sum = 0;
+
     if(a <= b) { 
         while(a <= b) { 
             sum += a; 
@@ -59,10 +60,10 @@ function getSum(a, b) {
             b++; 
         } 
     }  
-    console.log(sum);
+    return sum;
 }
 
-getSum(5, 1);
+console.log(getSum(5, 1));
 
 //Task 6
 
@@ -254,13 +255,13 @@ function checkWord(word) {
     let second = secondArr.join('');
 
     if (first === second) {
-        console.log('Палиндром');
+        return 'Палиндром';
     } else {
-        console.log('Не палиндром');
+        return 'Не палиндром';
     }
 }
 
-checkWord('saippuakivikauppias');
+console.log(checkWord('saippuakivikauppias'));
 
 //Task 3
 
