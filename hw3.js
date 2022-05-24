@@ -40,7 +40,7 @@
 // let apple = false;
 // let orange = true;
 // let shouldGoToWork;
-// if (key == true && documents == true && pen == true && orange == true || apple == true){
+// if (key == true && documents == true && pen == true && (orange == true || apple == true)){
 //    alert(shouldGoToWork = 'yes'); 
    
 // }  else{
@@ -75,23 +75,55 @@
 // }
 
 
-//task 7
+// //task 7
 
-let i;
-let x = prompt(i);
-switch (x) {
-    case 'Юг':
-        alert('на юг пойдешь счастье найдешь')
-        break;
-        case 'Север':
-            alert('на север пойдешь много денег найдешь')
-            break;
-        case 'Запад':
-        alert('на запад пойдешь верного друга найдешь')    
-        break;
-        case 'Восток':
-            alert('на восток пойдешь разработчиком станешь')
-            break;
-        default:
-            alert('Введите заново')                            
-}
+// let i;
+// let x = prompt(i);
+// switch (x) {
+//     case 'Юг':
+//         alert('на юг пойдешь счастье найдешь')
+//         break;
+//         case 'Север':
+//             alert('на север пойдешь много денег найдешь')
+//             break;
+//         case 'Запад':
+//         alert('на запад пойдешь верного друга найдешь')    
+//         break;
+//         case 'Восток':
+//             alert('на восток пойдешь разработчиком станешь')
+//             break;
+//         default:
+//             alert('Введите заново')                            
+// }
+
+
+
+
+// advance 
+
+// //task 3
+
+// let i = '';
+// let x;
+// for (x = 0; x < 6; x++){
+//     i+= '#';
+//     console.log(i);
+// }
+
+
+
+// //task 1
+
+// function toUpperCase(str){
+//     const words = str.toLowerCase().split(' ');
+    
+//     for (let i = 0; i < words.length; i++){
+//         words[i] = words[i][0].toUpperCase()
+//         + words[i].substring(1);
+//     }
+    
+//     return words.join(' ');
+// }
+
+// let Name = 'пОлИнА нАбЕрЕжНаЯ';
+// console.log(toUpperCase(Name));
