@@ -1,34 +1,73 @@
 'use strict'
 
 // Task 1
-let num = 100;
-function getSum(num) {
 
-   for (let i = 0; i <= num; i += 1) {
-      console.log(i);
+function getSum(num) {
+   if (!typeof num === "number") {
+      return;
    }
+
+   var numberStack = [];
+
+   for (var i = 1; i <= num; i++) {
+      numberStack.push(i);
+   }
+
+   let result = numberStack.reduce(function (acum, currentVal) {
+      return acum + currentVal;
+   }, 0);
+   console.log(result);
 }
-getSum();
+getSum(100);
 
 // Task 2
+let sumCredit = 1000;
+let per = 17;
+let year = 5;
 
-
+function credit(sum, percent, year) {
+   let result = (sum / 100 * percent) * year;
+   console.log(result);
+}
+credit(sumCredit, per, year);
 
 // Task 3
 
-
+function trimString(string, sliceFrom, sliceTo) {
+   let result = string.slice(sliceFrom, sliceTo);
+   console.log(result);
+}
+trimString('Кирилл', 2, 6);
 
 // Task 4
 
+function getSumNumbers(number) {
 
+   number += '';
+   let arr = Array.from(number).reduce((acum, cur) => {
+      return +acum + +cur;
+   }, 0);
+   console.log(arr);
+
+}
+getSumNumbers(123463463634636562);
 
 // Task 5
 
 
 
 // Task 6
+const foo = () => { console.log('foo') }
+const boo = () => { console.log('boo') }
 
-
+function fooboo(bool, funcTrue, funcFalse) {
+   if (bool) {
+      funcTrue();
+   } else {
+      funcFalse();
+   }
+}
+fooboo(true, foo, boo);
 
 // Task 7
 let obj = {
