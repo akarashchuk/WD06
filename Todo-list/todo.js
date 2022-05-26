@@ -8,7 +8,7 @@ header.insertAdjacentHTML("afterbegin", `<button type="button" class="btn btn-da
 
 let form = document.createElement('form');
 form.setAttribute('id', 'form');
-form.classList.add('col-7');
+form.className = 'col-7';
 header.append(form);
 
 form.insertAdjacentHTML("afterbegin", 
@@ -29,8 +29,7 @@ toDoListItem.insertAdjacentHTML("afterbegin",
 `<input class="form-check-input p-3 m-1" type="checkbox" value="" checked>`);
 
 let toDoListText = document.createElement('input');
-toDoListText.classList.add('form-control', 'form-control-lg', 
-'text-align-center', 'text-center', 'w-50', 'p-4');
+toDoListText.className = 'form-control form-control-lg text-align-center text-center w-50 p-4';
 toDoListItem.append(toDoListText);
 
 toDoListItem.insertAdjacentHTML("beforeend", `<div id="date" class="d-flex flex-column align-items-end"></div>`);
@@ -42,4 +41,5 @@ date.insertAdjacentHTML("beforeend",
 `<input type="text" class="form-control text-center mt-5" placeholder="DD.MM.YYYY" aria-label="Date">`);
 
 let SecondtoDoListItem = toDoListItem.cloneNode(true);
+SecondtoDoListItem.id = 'toDoListItem-clone';
 toDoList.append(SecondtoDoListItem); 
