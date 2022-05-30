@@ -4,32 +4,25 @@
 // Написать функцию getSum, которая будет высчитывать сумму чисел от нуля, до параметра, 
 // который мы в неё передаем.
 
-// let X = prompt('Введите целое положительное число X: ','');//задать параметр X
-// function getSum () {
+// const getSum = (X) => {
 //    let result = 0;
 //    for (let a = 0; a < X; a++) {
 //       result += a + 1;
 //    }
-//       return result;
+//    return result;
 // }
-//       alert(`Сумма всех чисел от 0 до X:  ${getSum ()}`);
-console.log(getSum(10))
+// console.log(getSum(100))
 
 
 // Task 2
 // Напишите функцию которая в качестве аргумента принимает в себя сумму кредита, 
 // который хочет получить клиент и верните результат переплаты по кредиту:
-// процентная ставка в год — 17%, количество лет — 5, сумма кредита не увеличивается
+// процентная ставка в год — 17%, количество лет — 5, сумма кредита не увеличивается.
 
-// let creditAmount = prompt('Введите сумму кредита, BYN', "");
-// let creditRate = prompt('Введите процентную ставку, %', "");
-// let yearsNumber = prompt('Введите срок кредита, лет', "");
-
-// function overPayment() {
-//    let over = creditAmount * creditRate / 100 * 5;
-//    return over;
+// const overPayment = (creditAmount, creditRate = 17, yearsNumber = 5) => {
+//    return creditAmount * creditRate * yearsNumber/ 100;
 // }
-//    alert(`Сумма переплаты составит, BYN: ${overPayment()}`);
+// console.log(overPayment(100));
 
 
    // Task 3
@@ -37,34 +30,25 @@ console.log(getSum(10))
    // строку, значение от, значение по.
    // После вызова функция должна вернуть переданную строку обрезанную по значениям от и по.
 
-//    let line = prompt('Введите строку', "");
-//    let cutFrom = prompt('Обрезать строку от символа №', "");
-//    let cutTill = prompt('Обрезать строку до символа №', "");
-//    console.log('Исходная строка:',line);
-//    console.log('Обрезать от символа',cutFrom);
-//    console.log('Обрезать до символа',cutTill);
-
-// function trimString () {
-//    let newLine = line.slice((cutFrom - 1), cutTill);
-//    return newLine;
+// const trimString = (string, cutFrom, cutTill) => {
+//    return string.slice((cutFrom - 1), cutTill);
 // }
-// console.log('Обрезанная строка:',trimString());
+// console.log('Обрезанная строка:',trimString('После вызова функция должна что-то.', 3, 10));
 
 
    // Task 4
    // Написать функцию getSumNumbers, которая будет принимать число 
    // и вычислять сумму цифр из которых состоит число.
 
-// let numberIn = prompt('Введите число',"");
-// let summ = 0;
-// function getSumNumbers () {
-//       let arr = Array.from('' + numberIn);
-//       for (let number of arr.map(Number)) {
-//       summ += number;
-//       }
-//       return summ;
+// const getSumNumbers = (numberIn) => {
+//    let summ = 0;
+//    let arr = Array.from('' + numberIn);
+//    for (let number of arr.map(Number)) {
+//    summ += number;
+//    } 
+//    return summ;
 // }
-// alert(getSumNumbers ());
+// console.log(getSumNumbers(1234567));
 
 
 // Task 5
@@ -72,22 +56,23 @@ console.log(getSum(10))
 // которые могут быть положительными или отрицательными, найти сумму всех чисел между ними, 
 // включая их, и вернуть ее. Если два числа равны, верните a или b.
 
-// let X = +prompt('Введите 1е число', '');
-// let Y = +prompt('Введите 2е число', '');
-// let Sum = 0;
-// if (X < Y) {
+// let a, b, total;
+// const getSum = (a, b) => {
+//    let sum = 0;
+//    if (a > b) {[a, b] = [b, a]};
+//    if (a === b) {
+//       total = a + b;
+//       console.log('Числа равны между собой и равны:',a);
 //    } else {
-//    [X, Y] = [Y, X];
-// }
-// function getSum () {
-//       for (let i = 0; X <= Y; i++) {
-//          Sum = Sum + X; 
-//          X += 1;
-//          console.log(Sum);
-//       }
-//       return Sum;
-// }
-// alert(getSum());
+//       for (let i = 0; i < (b - a); i++) {
+//          sum += a + i;
+//          total = sum + b;
+//       };
+//    };
+//    return total;
+// };
+
+// console.log('Сумма чисел между a и b (включительно) равна:', getSum(-200, -150));
 
 
 // Task 6
@@ -96,21 +81,20 @@ console.log(getSum(10))
 // функцию boo которая выводит в консоль свое имя
 // ***** Если переданное булевое значение true запускаем функцию foo иначе boo
 
-// function fooboo(bool) {
-//    if (bool == true) {
-//       foo();
-//    } else {
-//       boo();
-//    }
-// }
-
 // function foo() {
 //    console.log(foo.name);
 // }
 // function boo() {
 //    console.log(boo.name);
 // }
-// fooboo(true);
+// function fooboo(bool, foo, boo) {
+//    if (bool == true) {
+//       foo();
+//    } else {
+//       boo();
+//    }
+// }
+// fooboo(true, foo, boo);
 
 
    // Task 7
@@ -201,14 +185,23 @@ console.log(getSum(10))
 // Затем данные записать в обьект. Потом попросить пользователя подтвердить данные. 
 // Если верно введен логин и пароль, вывести сообщение Добро пожалоВать.
 
-
+// let user = new check(prompt('Логин'), prompt('Пароль'));
+// function check(login, pass) {
+//    this.login = login;
+//    this.pass = pass;
+// };
+// function registration(newLogin, newPass, newUser) {
+//    newLogin === newUser.login && newPass === newUser.pass ?
+//    console.log('Добро пожаловать!') :
+//    console.log('Попробуйте еще раз');
+// }
+// registration(prompt('Подтвердите логин'), prompt('Подтвердите пароль'), user);
 
 
 // Task 13
 // Выведите в консоль длину массива.
 
 // const colors = ['red', 'green', 'blue']
-
 // console.log(colors.length);
 
 
@@ -216,7 +209,6 @@ console.log(getSum(10))
 // Выведите в консоль последний элемент массива вне зависимости от его длинны.
 
 // const animals = ['monkey', 'dog', 'cat']
-
 // console.log(animals[animals.length - 1]);
 
 
@@ -271,10 +263,8 @@ console.log(getSum(10))
 
 // const allNumbers = evenNumbers.concat(oddNumbers);
 
-//  console.log(allNumbers);
-
-//  let index = +prompt('Input array number', '');
-//  alert(allNumbers.indexOf(index));
+// console.log('Объединенный массив:',evenNumbers.concat(oddNumbers));
+// console.log('Индекс числа:',allNumbers.indexOf(8));
 
 
 // Task 19
@@ -294,28 +284,22 @@ console.log(getSum(10))
 // Функция должна возвращать true, если треугольник можно построить 
 // со сторонами заданной длины, и false в любом другом случае.
 
-// let a = prompt('Сторона a','');
-// let b = prompt('Сторона b','');
-// let c = prompt('Сторона c','');
-
-// function triangle() {
-//    return a + b > c && a + c > b && b + c > a ? true : false
+// function triangle(a, b, c) {
+//    return a + b > c && a + c > b && b + c > a ? true : false;
 // }
-// alert(`Треугольник невозможен:   ${triangle()}`);
+// alert(triangle(5, 6, 0));
 
 
 // Task 2
 // Реализуйте функцию которая будет проверять, является ли слово палиндромом.
 
-// let isPalindrom = prompt('Введите слово','');
-// let arrPal = isPalindrom.split('');
-
-// function isTrue() {
-//    for (let i = 0; i < arrPal.length; i++) {
-//       return arrPal[i] == arrPal[arrPal.length -i - 1] ? true : false
-//    }
+// let word = prompt('Введите слово','');
+// word = word.split('').join('');
+// const isPal = () => {
+//    let drow = word.split('').reverse().join('');
+//    return (word === drow) ? true : false;
 // }
-//    console.log(isTrue());
+// console.log(isPal());
 
 
 // Task 3
@@ -328,18 +312,16 @@ console.log(getSum(10))
 //    [9092, 22, 45, 90000],
 // ]
 
-// let Summ = 0;
-// function count(array) {
-//    array.forEach(function(value) {
-//       Array.isArray(value) ? count(value) : Summ += value;
-//    });
-//    return Summ;
+// function aveCount(array) {
+//    let Summ = 0;
+//    let Length = 0;
+//    for (let i = 0; i < array.length; i++) {
+//       Summ += array[i].reduce((a, b) => a + b);
+//       Length += array[i].length;
+//    }
+//    return Summ / Length;
 // }
-// let length = matrix.reduce(function(totalLength, subarr) {
-//    return totalLength + subarr.length;
-//  }, 0);
-
-// console.log(count(matrix) / length);
+// console.log(aveCount(matrix));
 
 
 // Task 4
@@ -359,8 +341,3 @@ console.log(getSum(10))
 // }
 // console.log(negNumbers);
 // console.log(posNumbers);
-
-
-
-
-
