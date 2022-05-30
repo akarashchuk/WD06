@@ -10,37 +10,35 @@ const form = document.createElement('form');
 form.className = "input-group mb-3";
 container.append(form);
 
-const firstButton = document.createElement('button');
-firstButton.className = 'btn btn-outline-secondary';
-firstButton.setAttribute('type', 'button');
-firstButton.id = 'button-addon1';
-firstButton.textContent = 'Delete All';
-form.append(firstButton);
+const deleteButton = document.createElement('button');
+deleteButton.className = 'btn btn-outline-secondary';
+deleteButton.setAttribute('type', 'button');
+deleteButton.id = 'button-addon1';
+deleteButton.textContent = 'Delete All';
+form.append(deleteButton);
 
-let inputField = document.createElement('input');
+const inputField = document.createElement('input');
 inputField.className = "form-control";
 inputField.setAttribute('placeholder', 'Enter todo..', 'type', 'text');
 form.append(inputField);
 
-let toDoText = document.createElement('ul');
-toDoText.className = 'list-group list-unstyled d-flex flex-row justify-content-between mb-3';
-container.append(toDoText);
+const addButton = document.createElement('button');
+addButton.textContent = 'ADD';
+addButton.className = 'btn btn-outline-secondary';
+addButton.setAttribute('type', 'button');
+form.append(addButton);
 
-toDoText.insertAdjacentHTML(
+let toDoArea = document.createElement('ul');
+toDoArea.className = 'list-group list-unstyled d-flex justify-content-between mb-3';
+container.append(toDoArea);
+
+toDoArea.insertAdjacentHTML(
     'afterbegin',
-    '<li id = "toDoTextFirst" class = "list-group-item d-flex align-items-center " ><span class="input-group-text">OK</span></li>'
+    '<li id="firstThing" class="list-group-item d-flex align-items-center " ><span class="input-group-text">AGREE</span><input class="form-control" type="text" placeholder="Something to do" aria-label="Disabled input example" disabled><span class="input-group-text">CLOSE</span></li>'
 );
 
-toDoText.insertAdjacentHTML(
-    'beforeend',
-    '<li><textarea class="form-control" aria-label="With textarea">ToDoList</textarea></li>'
-);
+let firstThing = document.getElementById('firstThing');
 
-toDoText.insertAdjacentHTML(
-    'beforeend',
-    '<li id = "toDoTextFirst" class = "list-group-item d-flex align-items-center " ><span class="input-group-text">CLOSE</span></li>'
-);
+let secondThing = firstThing.cloneNode(true);
 
-let secondToDoList = toDoText.cloneNode(true);
-
-container.append(secondToDoList);
+toDoArea.append(secondThing);
