@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ToDoList</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="todo.css">
+  </head>
+  <body>
+     <div id="root">
+        <div class="container-xl">
+          <h1>To-Do-List</h1>
+          <div class="row">
+              <div class="col-4">
+                  <button type="button" class="btn btn-danger">Delete All</button>
+              </div>
+              <div class="col-8">
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Enter tasks to do" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Add</button>
+                  </div>
+              </div>
+          </div>
+
+            <ul class="task_list">
+              <li>
+                <form class="row g-3">
+                  <div class="col-md-10">
+                    <label for="inputTask" class="form-label">Task</label>
+                    <input type="text" class="form-control" id="inputTask">
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="gridCheck">
+                      <label class="form-check-label" for="gridCheck">Task done!</label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Cancel task</button>
+                  </div>
+                </form>
+              </li>
+            </ul>
+        </div>
+     </div>
+     <!-- <div class="wrap">
+       <input type="text" id="input"/>
+       <button id="btn">Add task</button>
+       <ul id="result"></ul>
+       <div>
+         Total:
+         <span id="total"></span>
+       </div>
+     </div> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="todo.js"></script>
+  </body>
+</html>
