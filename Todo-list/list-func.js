@@ -34,25 +34,33 @@ container.append(toDoArea);
 
 toDoArea.insertAdjacentHTML(
     'afterbegin',
-    '<li id="firstThing" class="list-group-item d-flex align-items-center " ><input class="form-check-input pr-5" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."><span class="form-control" type="text" aria-label="Disabled input example" disabled>Something to do</span><button class="input-group-text">CLOSE</button></li>'
+    '<li class="list-group-item d-flex align-items-center " ><input class="form-check-input pr-5" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."><span class="form-control text-center" type="text" aria-label="Disabled input example" disabled>Something to do</span><div class="d-flex flex-column"><button class="input-group-text">CLOSE</button><span class="btn btn-secondary mt-2">Day</span></div></li>'
 );
 
-let firstThing = document.getElementById('firstThing');
-
-let secondThing = firstThing.cloneNode(true);
-toDoArea.append(secondThing);
+toDoArea.insertAdjacentHTML(
+    'beforeend',
+    '<li class="list-group-item d-flex align-items-center " ><input class="form-check-input pr-5" type="checkbox" id="checkboxNoLabel2" value="" aria-label="..."><span class="form-control text-center" type="text" aria-label="Disabled input example" disabled>Something to do</span><div class="d-flex flex-column"><button class="input-group-text">CLOSE</button><span class="btn btn-secondary mt-2">Day</span></div></li>'
+);
 
 deleteButton.addEventListener('click', function() {
     // toDoArea.childNodes.remove();
     toDoArea.innerHTML = '';
 });
 
+// const date = new Date();
 
+function getUserTime(t = new Date()) {
+    let Y = t.getFullYear();
+    let M = t.getMonth() + 1;
+    let D = t.getDate();
+
+    return `${Y}/${M}/${D}`
+}
 
 addButton.addEventListener('click', function() {
     toDoArea.insertAdjacentHTML(
         'afterbegin',
-        `<li id="firstThing" class="list-group-item d-flex align-items-center " ><input class="form-check-input pr-5" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."><span class="form-control" type="text" aria-label="Disabled input example" disabled>${inputField.value}</span><span class="input-group-text">CLOSE</span></li>`
+        `<li id="firstThing" class="list-group-item d-flex align-items-center " ><input class="form-check-input pr-5" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."><span class="form-control text-center" type="text" aria-label="Disabled input example" disabled>${inputField.value}</span><div class="d-flex flex-column"><button class="input-group-text">CLOSE</button><span class="btn btn-secondary mt-2">${getUserTime()}</span></div></li>`
     )
 });
 
