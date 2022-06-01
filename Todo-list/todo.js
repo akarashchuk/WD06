@@ -28,7 +28,7 @@ shadow p-3 mb-5 border rounded rounded-pill justify-content-between align-items-
 toDoListItem.insertAdjacentHTML("afterbegin", 
 `<input class="form-check-input p-3 m-1" type="checkbox" value="" checked>`);
 
-let toDoListText = document.createElement('input');
+let toDoListText = document.createElement('span');
 toDoListText.className = 'form-control form-control-lg text-align-center text-center w-50 p-4';
 toDoListItem.append(toDoListText);
 
@@ -40,6 +40,6 @@ date.insertAdjacentHTML("afterbegin",
 date.insertAdjacentHTML("beforeend", 
 `<input type="text" class="form-control text-center mt-5" placeholder="DD.MM.YYYY" aria-label="Date">`);
 
-let SecondtoDoListItem = toDoListItem.cloneNode(true);
-SecondtoDoListItem.id = 'toDoListItem-clone';
-toDoList.append(SecondtoDoListItem); 
+let secondToDoListItem = toDoListItem.cloneNode(true);
+secondToDoListItem.id = 'toDoListItem-clone';
+toDoList.append(secondToDoListItem); 
