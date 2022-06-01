@@ -34,11 +34,10 @@ container.append(toDoArea);
 
 toDoArea.insertAdjacentHTML(
     'afterbegin',
-    '<li id="firstThing" class="list-group-item d-flex align-items-center " ><span class="input-group-text">AGREE</span><input class="form-control" type="text" placeholder="Something to do" aria-label="Disabled input example" disabled><span class="input-group-text">CLOSE</span></li>'
+    '<li class="list-group-item d-flex align-items-center " ><input class="form-check-input pr-5" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."><span class="form-control" type="text" aria-label="Disabled input example" disabled>Something to do</span><div class="d-flex flex-column"><button class="input-group-text">CLOSE</button><span class="btn btn-secondary mt-2">Day</span></div></li>'
 );
 
-let firstThing = document.getElementById('firstThing');
-
-let secondThing = firstThing.cloneNode(true);
-
-toDoArea.append(secondThing);
+toDoArea.insertAdjacentHTML(
+    'beforeend',
+    '<li class="list-group-item d-flex align-items-center " ><input class="form-check-input pr-5" type="checkbox" id="checkboxNoLabel2" value="" aria-label="..."><span class="form-control" type="text" aria-label="Disabled input example" disabled>Something to do</span><div class="d-flex flex-column"><button class="input-group-text">CLOSE</button><span class="btn btn-secondary mt-2">Day</span></div></li>'
+);
