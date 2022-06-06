@@ -43,7 +43,7 @@ function createNewItem() {
         isChecked: false,
         creationDate: new Date().toLocaleDateString(),
     }
-    
+
     toDoItems.push(newItem);
     renderList();
     enterTask.value = '';
@@ -54,8 +54,8 @@ function renderList() {
     const items = toDoItems.map((item) => {
         return `
             <li data-id="${item.itemId}" class="list-group-item rounded-4 bg-light shadow-sm p-4 my-4 d-flex justify-content-between  ${item.isChecked ? 'checked' : ''}">
-                <input type="checkbox" class="form-check-input p-3 m-2 align-self-center" ${item.isChecked ? 'checked' : ''}>
-                <span class="border-radius bg-white shadow-sm rounded w-75 p-4 my-4 fs-5 ${item.isChecked ? 'checked' : ''}">${item.value}</span>
+                <input type="checkbox" class="form-check-input p-3 m-2 align-self-center">
+                <span class="border-radius bg-white shadow-sm rounded w-75 p-4 my-4 fs-5">${item.value}</span>
                 <div class="d-flex flex-column justify-content-between align-items-end">
                     <button class="btn-close" aria-label="Close"></button>
                     <span class="border-radius bg-white shadow-sm rounded py-2 px-3 fs-5 text-muted">${item.creationDate}</span>
@@ -66,43 +66,43 @@ function renderList() {
 
     toDoList.innerHTML = items;
 }
- 
-function addTask(event){
+
+function addTask(event) {
     event.preventDefault();
 
-    if (enterTask.value == ''){
+    if (enterTask.value == '') {
         alert('Nothing to add');
-        return; 
-    } 
+        return;
+    }
     createNewItem();
 }
 
-form.addEventListener('submit', addTask);     
+form.addEventListener('submit', addTask);
 
 function deleteAllItems() {
     toDoList.innerHTML = "";
     toDoItems.length = 0;
 }
 
-buttonDelete.addEventListener('click', deleteAllItems);  
+buttonDelete.addEventListener('click', deleteAllItems);
 
 
-toDoList.addEventListener('click', event =>{                // сил моих больше нет, нужна подсказка((
-    
-    if(event.target.classList.contains('form-check-input')){
-        const id = event.target.parentElement.dataset.id; 
+toDoList.addEventListener('click', event => {                // сил моих больше нет, нужна подсказка((
+
+    if (event.target.classList.contains('form-check-input')) {
+        const id = event.target.parentElement.dataset.id;
         let completedItem = toDoItems.find(item => item.itemId === id).isChecked;
 
         completedItem = !completedItem;
 
-        if(completedItem){
+        if (completedItem) {
             event.target.closest('.list-group-item').classList.add('checked', 'text-decoration-line-through');
             event.target.closest('.list-group-item').style.opacity = '.5';
         }
     }
 
-    if(event.target.classList.contains('btn-close')){
-        event.target.closest('.list-group-item').remove(); 
+    if (event.target.classList.contains('btn-close')) {
+        event.target.closest('.list-group-item').remove();
     }
 });
 
