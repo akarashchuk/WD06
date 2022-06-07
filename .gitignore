@@ -1,1 +1,4 @@
 *.md
+.vscode/
+.idea/
+php_study/
