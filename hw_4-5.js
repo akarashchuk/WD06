@@ -110,7 +110,7 @@
     isHappy: true
  }
 
- for (var prop in student) {
+ for (let prop in student) {
    console.log("student." + prop + " = " + student[prop]);
  }
 
