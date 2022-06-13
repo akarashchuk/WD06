@@ -1,0 +1,305 @@
+/*Обнуление*/
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:focus,
+:active {
+    outline: none;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: 400;
+}
+
+#root {
+    max-width: 1170px;
+    width: 90%;
+    margin: 0 auto;
+    background-color: lightgray;
+    border: solid black 2px;
+    border-radius: 5px;
+}
+
+#root .content .top button,
+#root .content .show button {
+    background-color: aqua;
+    border-radius: 5px;
+    border: solid black 2px;
+}
+
+#root .content .todo li .todo-li> :last-child .close {
+    background-color: aqua;
+    border-radius: 5px;
+    border: solid black 2px;
+}
+
+#root .content .todo li .todo-li> :last-child .date {
+    background-color: white;
+    border-radius: 5px;
+}
+
+#root .content .top input,
+#root .content .show input {
+    background-color: white;
+    border-radius: 5px;
+    border: solid black 2px;
+    text-align: center;
+}
+
+#root .content .todo li .todo-li> :first-child input[type="text"] {
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+* {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+#root {
+    max-width: 1170px;
+    width: 90%;
+    margin: 0 auto;
+    background-color: lightgray;
+    border: solid black 2px;
+    border-radius: 5px;
+}
+
+#root .content .top button,
+#root .content .show button {
+    background-color: aqua;
+    border-radius: 5px;
+    border: solid black 2px;
+}
+
+#root .content .todo li .todo-li> :first-child .close {
+    background-color: aqua;
+    border-radius: 5px;
+    border: solid black 2px;
+}
+
+#root .content .todo li .todo-li> :last-child .date {
+    background-color: white;
+    border-radius: 5px;
+}
+
+#root .content .top input,
+#root .content .show input {
+    background-color: white;
+    border-radius: 5px;
+    border: solid black 2px;
+    text-align: center;
+}
+
+* {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+#root {
+    margin-top: 3%;
+}
+
+#root .content {
+    width: 95%;
+    margin: 0 auto;
+}
+
+#root .content .top {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 3% 0 3% 0;
+}
+
+#root .content .top button {
+    width: 7rem;
+    height: 2.75rem;
+}
+
+#root .content .top form {
+    width: 60%;
+}
+
+#root .content .top input {
+    width: 100%;
+    height: 2.75rem;
+}
+
+#root .content .show {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding-bottom: 3%;
+}
+
+#root .content .show button {
+    width: 10rem;
+    height: 2.75rem;
+}
+
+#root .content .show form {
+    width: 30%;
+}
+
+#root .content .show input {
+    width: 100%;
+    height: 2.75rem;
+}
+
+#root .content .todo {
+    width: 100%;
+}
+
+#root .content .todo li {
+    border: solid black 2px;
+    border-radius: 5px;
+    margin-bottom: 5%;
+}
+
+#root .content .todo li .todo-li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+#root .content .todo li .todo-li> :first-child {
+    width: 100%;
+    margin: 0 auto;
+    padding: 1% 0 1% 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+
+#root .content .todo li .todo-li> :first-child .check {
+    width: 2rem;
+    background-color: aqua;
+}
+
+#root .content .todo li .todo-li> :first-child .check:checked~div .doToText {
+    text-decoration: line-through;
+}
+
+#root .content .todo li .todo-li> :first-child div {
+    width: 80%;
+    background-color: white;
+    border-radius: 5px;
+    border: solid white 2px;
+    text-align: center;
+    height: 2rem;
+}
+
+#root .content .todo li .todo-li> :first-child .close {
+    width: 2rem;
+    height: 2rem;
+}
+
+#root .content .todo li .todo-li> :last-child {
+    width: 100%;
+}
+
+#root .content .todo li .todo-li> :last-child .date {
+    width: 5rem;
+    height: 2rem;
+    margin: 10%;
+    background-color: white;
+    border-radius: 5px;
+    border: solid white 2px;
+    text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */
