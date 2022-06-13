@@ -24,18 +24,15 @@
 
 //TASK 3
 
- function trimString(string, valueFrom, valueBy) {
+function trimString(str, valueFrom, valueBy) {
+        let forString = str.slice(valueFrom, valueBy);
    
-    for(let string = valueFrom; valueBy; string++){
-      console.log(string);
- }
+        return forString;    
+    }
+   
+    console.log(trimString("очень длинный текст", 6, 13));
 
-    return string;
- }
-
- trimString(5, 10);
-
- //не догоняю что она должна обрезать 
+ //тип того ?))) 
 
 //TASK 4
 
@@ -104,15 +101,15 @@
 
 //TASK 9 
 
- const student = {
-    name: 'John',
-    age: 19,
-    isHappy: true
- }
+//  const student = {
+//     name: 'John',
+//     age: 19,
+//     isHappy: true
+//  }
 
- for (let prop in student) {
-   console.log("student." + prop + " = " + student[prop]);
- }
+//  for (let prop in student) {
+//    console.log("student." + prop + " = " + student[prop]);
+//  }
 
  // TASK 10
 
@@ -137,11 +134,19 @@
     {alexandra: 199},
  ]
 
- let result = salaries.find(function(arr){
-   return arr;
-}, 0);
+let sum = 0;
+let count = 0;
+for (let name in salaries) {
+   sum += salaries[name];
+   count++;
+}
 
-console.log (result);
+let avg = sum / count;
+
+console.log(avg);
+
+/*Изначально этим же способом пытался пройтись ,но выходит NaN
+переделаю утром если додумаю */ 
 
 //TASK 12
 
@@ -177,13 +182,13 @@ console.log (result);
 
  //TASK 15
 
-  const numbers = [5, 43, 63, 23, 90]
+//   const numbers = [5, 43, 63, 23, 90]
 
-  const newNumbers = numbers.splice (
-     0, 5
-  );
+//   const newNumbers = numbers.splice (
+//      0, 5
+//   );
 
-  console.log(numbers);
+//   console.log(numbers);
 
  //TASK 16
 
@@ -257,18 +262,23 @@ console.log (result);
 
 //Task 3
 
-const matrix = [
-   [12, 98, 78, 65, 23],
-   [54, 76, 98, 43, 65],
-   [13, 324, 65, 312],
-   [9092, 22, 45, 90000],
-]
+// const matrix = [
+//    [12, 98, 78, 65, 23],
+//    [54, 76, 98, 43, 65],
+//    [13, 324, 65, 312],
+//    [9092, 22, 45, 90000],
+// ]
 
-let results = matrix.find(function(arr){
-   return arr;
-}, 0);
+// let sum = 0;
+// let count = 0;
+// for (let row of matrix) {
+//     sum += row.reduce((prev, item) => prev + item, 0);
+//     count += row.length;
+// }
 
-console.log (results);
+// let avg = sum / count;
+
+// console.log(avg);
 
 //Task 4
 
