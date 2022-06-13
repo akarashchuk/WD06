@@ -24,16 +24,18 @@
 
 //TASK 3
 
-// function trimString(string, valueFrom, valueBy) {
+ function trimString(string, valueFrom, valueBy) {
    
-//    for(let string = valueFrom; string = valueBy; string++){
-//       console.log(string);
-//    }
+    for(let string = valueFrom; valueBy; string++){
+      console.log(string);
+ }
 
-//    return string;
-// }
+    return string;
+ }
 
-// trimString(5, 10);
+ trimString(5, 10);
+
+ //не догоняю что она должна обрезать 
 
 //TASK 4
 
@@ -102,23 +104,15 @@
 
 //TASK 9 
 
-// const student = {
-//    name: 'John',
-//    age: 19,
-//    isHappy: true
-// }
+ const student = {
+    name: 'John',
+    age: 19,
+    isHappy: true
+ }
 
-// for (let key in Object.keys(student)) {
-
-//    console.log(key);
-
-//  }
-
-//  for (let values in Object.values(student)) {
-
-//    console.log(values);
-
-//  }
+ for (var prop in student) {
+   console.log("student." + prop + " = " + student[prop]);
+ }
 
  // TASK 10
 
@@ -135,19 +129,19 @@
 
 //TASK 11
 
-// let salaries = [
-//    {andrey: 500,},
-//    {sveta: 413,},
-//    {anton: 987,},
-//    {andrey: 664,},
-//    {alexandra: 199},
-// ]
+ let salaries = [
+    {andrey: 500,},
+    {sveta: 413,},
+    {anton: 987,},
+    {vadim: 664,},
+    {alexandra: 199},
+ ]
 
-// let result = salaries.reduce(function(arr){
-//       return arr;
-// }, 0);
+ let result = salaries.find(function(arr){
+   return arr;
+}, 0);
 
-//  console.log (result);
+console.log (result);
 
 //TASK 12
 
@@ -183,13 +177,13 @@
 
  //TASK 15
 
-//  const numbers = [5, 43, 63, 23, 90]
+  const numbers = [5, 43, 63, 23, 90]
 
-//  numbers.splice('delete');
-//  console.log(numbers);
+  const newNumbers = numbers.splice (
+     0, 5
+  );
 
-//  numbers.shift(0);
-//  console.log(numbers);
+  console.log(numbers);
 
  //TASK 16
 
@@ -263,29 +257,29 @@
 
 //Task 3
 
-// const matrix = [
-//    [12, 98, 78, 65, 23],
-//    [54, 76, 98, 43, 65],
-//    [13, 324, 65, 312],
-//    [9092, 22, 45, 90000],
-// ]
+const matrix = [
+   [12, 98, 78, 65, 23],
+   [54, 76, 98, 43, 65],
+   [13, 324, 65, 312],
+   [9092, 22, 45, 90000],
+]
 
-// let results = salaries.reduce(function(arr){
-//    return arr;
-// }, 0);
+let results = matrix.find(function(arr){
+   return arr;
+}, 0);
 
-// console.log (results);
+console.log (results);
 
 //Task 4
 
-// const mixedNumbers = [-14, 24, -89, 43, 0 , -1, 412, 4];
+//  const mixedNumbers = [-14, 24, -89, 43, 0 , -1, 412, 4];
 
-// let positiveNumber = []
-// let negativeNumber = []
+//  let positiveNumber = []
+//  let negativeNumber = []
 
-// for (let i = 0; i < mixedNumbers.length; i++) {
-//    mixedNumbers[i] >= 0 ? positiveNumber.push(mixedNumbers[i]) : negativeNumber.push(mixedNumbers[i]);
-// }
+//  for (let i = 0; i < mixedNumbers.length; i++) {
+//     mixedNumbers[i] >= 0 ? positiveNumber.push(mixedNumbers[i]) : negativeNumber.push(mixedNumbers[i]);
+//  }
 
-// console.log(positiveNumber);
-// console.log(negativeNumber);
+//  console.log(positiveNumber);
+//  console.log(negativeNumber);
