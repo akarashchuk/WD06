@@ -126,13 +126,13 @@ function trimString(str, valueFrom, valueBy) {
 
 //TASK 11
 
- let salaries = [
-    {andrey: 500,},
-    {sveta: 413,},
-    {anton: 987,},
-    {vadim: 664,},
-    {alexandra: 199},
- ]
+ let salaries = {
+    andrey: 500,
+    sveta: 413,
+    anton: 987,
+    vadim: 664,
+    alexandra: 199,
+   }
 
 let sum = 0;
 let count = 0;
