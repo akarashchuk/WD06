@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Todo list</title>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style_todo.css">
+    </head>
+    <body>
+        <h1>My Todo List</h1>
+        <div class="flex-wrapper">
+            <div class="add-todo-wrapper">
+                <div class="button-wrapper">
+                    <button id="del-all-task-btn">Delete all</button>
+                </div>
+                <div class="input-wrapper"><!--для ввода задачи пользователем-->
+                    <input type="text" id = "description-task">
+                </div>
+                <div class="button-wrapper">
+                    <button id="add-task-btn">Add</button>
+                </div>
+            </div>
+            <!--<div class ="todos-wrapper">--> <!--для реализации через класс-->
+            <div id ="todoswrapper"></div> <!--для реализации через id-->
+                <!--здесь будут храниться задачи и добавляться динамически задачи todo листа-->
+            </div>
+        </div>
+        <script src="Todo_list.js"></script>
+    </body>
+</html>

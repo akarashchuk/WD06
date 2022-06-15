@@ -1,0 +1,126 @@
+html, body{
+    margin: 0;
+    height: 100%;
+    background-color: aqua;
+    font-family: Oswald, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+.flex-wrapper{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.add-todo-wrapper {
+    display: flex;
+    width: 600px;
+    min-height: 40px;
+    align-items: center;
+    background-color: rgb(34, 248, 66);
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.input-wrapper {
+    width: 80%;
+}
+
+.input-wrapper input {
+    width: 100%;
+    height: 25px;
+}
+
+
+.button-wrapper {
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+}
+
+.button-wrapper button {
+    width: 80%;
+    background-color: green;
+    color: #ffffff;
+    outline: none;
+    border: none;
+    height: 25px;
+    cursor: pointer;
+}
+
+/*каждый task*/
+.todo-item {
+    display: flex;
+    width: 600px;
+    min-height: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 5px;
+    margin-top: 20px;
+    background-color: orange;
+}
+
+
+.todo-item.checked {
+    background-color: gray;
+    opacity: 0.5;
+    text-decoration: line-through;/*зачеркивание текста при checked*/
+}
+
+
+.todo-item.delition {
+    animation:  opacity 1s ease-in-out;
+}
+
+.description {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    color: black;
+    padding-left: 10px;
+}
+
+.butons {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content:  flex-end;
+}
+
+.butons input {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.buttons button {
+    outline: none;
+    border: none;
+    background-color: rebeccapurple;
+    color: #ffffff;
+    cursor: pointer;
+    height: 25px;
+    border-radius: 5px;
+}
+
+.btn-complete {
+    width: 20px;
+    height: 20px; 
+    margin-top: 15px;
+}
+
+@keyframes opacity {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
