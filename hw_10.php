@@ -17,9 +17,7 @@ echo mb_strlen($str);
 // Task 4
 
 $oldText = "Learn HTML!";
-$newText = "Learn PHP!";
-$oldText = $newText;
-echo $oldText;
+echo str_replace("HTML","PHP",$oldText);
 
 // Task 5
 
