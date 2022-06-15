@@ -1,0 +1,56 @@
+<?php
+// Task 1
+//$x = "Hello World";
+//echo $x;
+
+
+//Task 2
+//$x = 5;
+//$y = 10;
+//echo $x + $y;
+
+//Task 3
+//$str = "Привет мир!";
+//echo mb_strlen($str);
+
+
+//Task 4
+//$oldText = "Learn HTML!";
+//echo str_replace("HTML", "PHP", $oldText);
+
+
+//Task 5
+//$x = 50;
+//$y = 10;
+//if ($x > $y) {
+//    echo "x больше y";
+//} else {
+//    echo "x меньше или равен y";
+//}
+
+////Task 6
+//$a = 20;
+//$b = 10;
+//if ($a == $b) {
+//    echo "Первый";
+//}elseif ($a > $b) {
+//    echo "Второй";
+//}else {
+//    echo "Третий";
+//}
+
+
+//Task 7
+//$color = "white";
+//switch ($color) {
+//    case "red";
+//        echo "Hello";
+//        break;
+//    case "green";
+//        echo "Второй";
+//        break;
+//    default:
+//        echo "another color";
+//        break;
+//}
+?>
