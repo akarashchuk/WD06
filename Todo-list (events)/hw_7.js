@@ -34,7 +34,13 @@ const toDoList = document.createElement('ul');
 toDoList.className = 'list-group gap-2 list-unstyled';
 root.append(toDoList);
 
-let toDoItems = [];
+let toDoItems = JSON.parse(localStorage.getItem('Tasks'));
+
+toDoItems.forEach(renderList);
+
+const updateStorage = () => {
+    localStorage.setItem('Tasks', JSON.stringify(toDoItems));
+}
 
 function createNewItem() {
     let newItem = {
@@ -53,18 +59,15 @@ function renderList() {
 
     const items = toDoItems.map((item) => {
         return `
-        <li data-id="${item.itemId}" class="list-group-item rounded-4 bg-light shadow-sm p-4 my-4 
-            d-flex justify-content-between  ${item.isChecked ? 'checked' : ''}">
-                <input type="checkbox" class="form-check-input p-3 m-2 align-self-center"
-                    ${item.isChecked ? 'checked' : ''}>
-                <span class="border-radius bg-white shadow-sm rounded w-75 p-4 my-4 fs-5">
-                    ${item.value}</span>
+            <li data-id="${item.itemId}" class="list-group-item rounded-4 bg-light shadow-sm p-4 my-4 d-flex 
+            justify-content-between ${item.isChecked ? 'text-decoration-line-through' : ''}" ${item.isChecked ? 'style="opacity: .5;"' : ''}>
+                <input type="checkbox" class="form-check-input p-3 m-2 align-self-center"${item.isChecked ? 'checked' : ''}>
+                <span class="border-radius bg-white shadow-sm rounded w-75 p-4 my-4 fs-5">${item.value}</span>
                 <div class="d-flex flex-column justify-content-between align-items-end">
                     <button class="btn-close" aria-label="Close"></button>
-                    <span class="border-radius bg-white shadow-sm rounded py-2 px-3 fs-5 
-                        text-muted">${item.creationDate}</span>
-            </div>
-        </li>
+                    <span class="border-radius bg-white shadow-sm rounded py-2 px-3 fs-5 text-muted">${item.creationDate}</span>
+                </div>
+            </li>
         `;
     }).join('');
 
@@ -79,33 +82,57 @@ function addTask(event) {
         return;
     }
     createNewItem();
+    updateStorage();
 }
 
 form.addEventListener('submit', addTask);
 
+buttonDelete.addEventListener('click', deleteAllItems);
+
 function deleteAllItems() {
     toDoList.innerHTML = "";
     toDoItems.length = 0;
+    updateStorage();
 }
 
-buttonDelete.addEventListener('click', deleteAllItems);
+toDoList.addEventListener('click', tickComplete);
 
-
-toDoList.addEventListener('click', event => {
-
+function tickComplete(event) {
     if (event.target.classList.contains('form-check-input')) {
-        if (document.querySelector('.form-check-input:checked')) {
+        const id = event.target.parentElement.dataset.id;
+
+        let items = toDoItems.find(item => item.itemId === id);
+        items.isChecked = !items.isChecked;
+
+        if (items.isChecked) {
             event.target.parentElement.classList.add('text-decoration-line-through');
             event.target.parentElement.style.opacity = '.5';
         } else {
             event.target.parentElement.classList.remove('text-decoration-line-through');
             event.target.parentElement.style.opacity = '';
         }
-    }
 
-    if (event.target.classList.contains('btn-close')) {
-        event.target.closest('.list-group-item').remove();
-        toDoItems.splice(event.target.closest('.list-group-item'), 1);
+        updateStorage();
     }
-});
+}
+
+toDoList.addEventListener('click', deleteItem);
+
+function deleteItem(event) {
+    if (event.target.classList.contains('btn-close')) {
+        const id = event.target.closest('.list-group-item').dataset.id;
+
+        event.target.closest('.list-group-item').remove();
+
+        toDoItems.forEach(function (item, i) {
+            if (item.itemId === id) toDoItems.splice(i, 1);
+        });
+        updateStorage();
+    }
+}
+
+// window.addEventListener('storage', event => {
+//     в душе не знаю, что тут должно быть
+//     если навеведешь на мысль, буду очень благодарна)
+// });
 
