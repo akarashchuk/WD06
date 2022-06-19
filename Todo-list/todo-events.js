@@ -1,5 +1,6 @@
 "use strict";
 
+const root = document.getElementById('root');
 root.className = 'container';
 
 root.insertAdjacentHTML("afterbegin", `<header id="header" 
@@ -13,7 +14,7 @@ form.className = 'col-7';
 header.append(form);
 
 form.insertAdjacentHTML("afterbegin", 
-`<input type="text" id="toDoForm" class="form-control form-control-lg text-align-center text-center"
+`<input type="text" id="toDoForm" class="form-control form-control-lg text-center"
  required placeholder="Enter Todo..." value=""></input>`);
 
 header.insertAdjacentHTML("beforeend", 
@@ -34,19 +35,14 @@ toDoListText.className = 'form-control form-control-lg text-align-center text-ce
 toDoListText.id = "inputText";
 toDoListItem.append(toDoListText);
 
-toDoListItem.insertAdjacentHTML("beforeend", `<div id="date" class="d-flex flex-column align-items-center"></div>`);
+toDoListItem.insertAdjacentHTML("beforeend", `<div id="date" class="d-flex flex-column align-items-center p-5"></div>`);
 
 date.insertAdjacentHTML("afterbegin", 
 `<button type="button" class="btn-close" aria-label="Close"></button>`);
 
-const currentDate = new Date().toISOString().slice(0,10);
-
-date.insertAdjacentHTML("beforeend", 
-`<input type="text" class="form-control text-center mt-5 w-75" value="${currentDate}" aria-label="Date">`);
-
 const secondToDoListItem = toDoListItem.cloneNode(true);
 secondToDoListItem.id = 'toDoListItem-clone';
-toDoList.append(secondToDoListItem); 
+toDoList.append(secondToDoListItem);
 
 
 const addBtn = document.getElementById('addButton');
@@ -59,15 +55,16 @@ deleteAllBtn.addEventListener('click', function() {
     list.innerHTML = " ";
 });
 
+const currentDate = new Date().toLocaleDateString();
+
 const createToDoItem = () => {
     toDoList.insertAdjacentHTML("afterbegin", `<li id="toDoListItem" class="container d-flex mb-3 p-3 text-dark 
     bg-opacity-10 shadow p-3 mb-3 border rounded rounded-pill justify-content-between align-items-center">
-    <input class="form-check-input p-3 m-5" type="checkbox" value="">
-    <span class="form-control form-control-lg text-align-center text-center text-through w-50 p-2" id="inputText">${listForm.value}</span>
-    <div id="date" class="d-flex flex-column align-items-center">
+    <input class="form-check-input p-3 m-5" type="checkbox">
+    <span class="form-control form-control-lg text-center text-through w-50 p-2" id="inputText">${listForm.value}</span>
+    <div id="date" class="d-flex flex-column align-items-center p-4">
     <button type="button" class="btn-close" aria-label="Close"></button>
-    <input type="text" class="form-control text-center font-weight-bold mt-5 w-75" value="${currentDate}" aria-label="Date"></div></li>
-    `)
+    <span class="form-control text-center mt-3">${new Date().toLocaleDateString()}</span></div></li>`)
 };
 
 function submit() {
@@ -82,10 +79,6 @@ function submit() {
 addBtn.addEventListener('click', function() {
     submit();
 });
-
-document.addEventListener('keyup', event => {
-    if(event.code === 'Enter') submit();
-  });
 
 toDoList.addEventListener('click', function(event) {
     if (event.target.closest('.btn-close')) {
