@@ -34,9 +34,9 @@ const toDoList = document.createElement('ul');
 toDoList.className = 'list-group gap-2 list-unstyled';
 root.append(toDoList);
 
-let toDoItems = JSON.parse(localStorage.getItem('Tasks'));
-
-toDoItems.forEach(renderList);
+let storageItems = JSON.parse(localStorage.getItem('Tasks'));
+let toDoItems = storageItems ? storageItems : [];
+renderList();
 
 const updateStorage = () => {
     localStorage.setItem('Tasks', JSON.stringify(toDoItems));
@@ -91,13 +91,13 @@ buttonDelete.addEventListener('click', deleteAllItems);
 
 function deleteAllItems() {
     toDoList.innerHTML = "";
-    toDoItems.length = 0;
+    toDoItems = [];
     updateStorage();
 }
 
-toDoList.addEventListener('click', tickComplete);
+toDoList.addEventListener('click', completeTask);
 
-function tickComplete(event) {
+function completeTask(event) {
     if (event.target.classList.contains('form-check-input')) {
         const id = event.target.parentElement.dataset.id;
 
@@ -131,8 +131,8 @@ function deleteItem(event) {
     }
 }
 
-// window.addEventListener('storage', event => {
-//     в душе не знаю, что тут должно быть
-//     если навеведешь на мысль, буду очень благодарна)
-// });
+window.addEventListener('storage', event => {
+    toDoItems = JSON.parse(event.newValue);
+    renderList();
+});
 
