@@ -7,7 +7,7 @@ ini_set(option: 'display_errors', value: 1);
 //NORMAL level
 // Task 1
 //$fruits = ["Apple", "Banana", "Orange"];
-//echo (count($fruits));
+//echo count($fruits);
 
 
 //Task 2
@@ -31,8 +31,8 @@ ini_set(option: 'display_errors', value: 1);
 
 //Task 5
 //$arr = [
-//    'ru'=>['голубой', 'красный', 'зеленый'],
-//    'en'=>['blue', 'red', 'green'],
+//    'ru' => ['голубой', 'красный', 'зеленый'],
+//    'en' => ['blue', 'red', 'green'],
 //];
 //
 //echo $arr['ru'][0] . ', ' . $arr['ru'][1] . ', ' . $arr['en'][1];
@@ -47,14 +47,14 @@ ini_set(option: 'display_errors', value: 1);
 //Task 7
 //$lang = 'ru';
 //
-//$Неделя = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
-//$Week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+//$nedelya = ['понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресенье'];
+//$week = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
 
 //if
 //if ($lang === 'ru') {
-//    print_r($Неделя);
+//    print_r($nedelya);
 //} elseif ($lang === 'en') {
-//    print_r($Week);
+//    print_r($week);
 //} else {
 //    echo 'Выберите английский или русский язык';
 //}
@@ -63,10 +63,10 @@ ini_set(option: 'display_errors', value: 1);
 ////switch-case
 //switch ($lang) {
 //   case 'ru':
-//       print_r($Неделя);
+//       print_r($nedelya);
 //       break;
 //   case 'en':
-//        print_r($Week);
+//        print_r($week);
 //        break;
 //    default:
 //        echo 'Выберите английский или русский язык';
@@ -76,8 +76,8 @@ ini_set(option: 'display_errors', value: 1);
 //
 // match
 //////$value = match ($lang) {
-//    'ru' => print_r($Неделя),
-//    'en' => print_r($Week),
+//    'ru' => print_r($nedelya),
+//    'en' => print_r($week),
 //    default => print_r('Выберите английский или русский язык')
 //};
 //
@@ -168,7 +168,7 @@ ini_set(option: 'display_errors', value: 1);
 
 
 //Task 18
-//$arr = ['green'=>'зеленый', 'red'=>'красный','blue'=>'голубой'];
+//$arr = ['green' => 'зеленый', 'red' => 'красный', 'blue' => 'голубой'];
 //foreach ($arr as $key => $item) {
 //    echo $key, ' - ', $item, '<br>';
 //}
