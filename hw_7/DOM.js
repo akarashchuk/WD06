@@ -154,16 +154,16 @@ window.addEventListener('storage', onStor);
 
 
 // Вариант № 2
-//ul_td.innerHTML = getItem('data_myUl');
-
 let myLi = [];
 let htmlStr = '';
 let maxId = getMax(myLi);
 
 
-if (getItem('data_myUl')){
-   let myLi = getItem('data_myUl');
-   render(myLi);
+let storageItem = getItem('data_myUl');
+console.log(storageItem);
+if (storageItem) {
+    myLi = storageItem;
+    render(myLi);
 }
 
 function getMax(myObj) {
@@ -210,11 +210,10 @@ function delLi(id) {
 function render(myLi) {
     htmlStr = '';
     if (myLi.length) {
-        //return ul_td.innerHTML = '';
         for (let i = 0; i < myLi.length; i++) {
-        htmlStr += addLihtml(myLi[i].id, myLi[i].text, myLi[i].data, myLi[i].isCheck);
-         }
-    }   
+            htmlStr += addLihtml(myLi[i].id, myLi[i].text, myLi[i].data, myLi[i].isCheck);
+        }
+    }
     ul_td.innerHTML = htmlStr;
 }
 function isCheck(elem) {
@@ -241,25 +240,24 @@ function onAddLi(event) {
 function onDelAllLi(event) {
     if (event.target.className === 'deleteAll') {
         ul_td.innerHTML = '';
+        myLi.length = 0;
+        maxId = 0;
+        setItem('data_myUl', JSON.stringify(myLi));
     }
-    htmlStr = '';
-    myLi.length = 0;
-    maxId = 0;
-    setItem('data_myUl', JSON.stringify(myLi));
 }
+
 function onDelLi(event) {
     if (event.target.className === 'close') {
         delLi(event.target.closest('li').id);
+        setItem('data_myUl', JSON.stringify(myLi));
     }
-    render(myLi);
-    setItem('data_myUl', JSON.stringify(myLi));
 }
 
 function onChecked(event) {
     if (event.target.className === 'check') {
         isCheck(event.target);
+        setItem('data_myUl', JSON.stringify(myLi));
     }
-    setItem('data_myUl', JSON.stringify(myLi));
 }
 
 function onStor(event) {
@@ -278,13 +276,13 @@ function setItem(key, item) {
 }
 
 function getItem(key) {
-    try {   
-        return localStorage.getItem(key) ? JSON.parse(localStorage.getItem(key)):''; 
+    try {
+        return localStorage.getItem(key) ? JSON.parse(localStorage.getItem(key)) : '';
     }
     catch (e) {
         console.log(e);
     }
-    
+
 }
 
 document.querySelector('.add').addEventListener('click', onAddLi);
