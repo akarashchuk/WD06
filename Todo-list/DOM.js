@@ -1,23 +1,12 @@
-document.body.style.fontFamily = 'Times New Roman,Times, serif';
-document.body.style.fontSize = '16px';
-document.body.style.lineHeight = '1.5';
+
 
 // div #root
 let divRoot = document.body.children[0];
-divRoot.style.margin = '0 auto';
-divRoot.style.backgroundColor = 'lightgray';
-divRoot.style.border = "solid black 2px";
-divRoot.style.borderRadius = "5px";
-divRoot.style.width = '80%';
-divRoot.style.maxWidth = '1170px';
-divRoot.style.minWidth = '700px';
 
 //div .content
 let divCont = document.createElement('div');
 divCont.className = "content";
 divRoot.prepend(divCont);
-divCont.style.width = '90%';
-divCont.style.margin = '0 auto';
 
 //div .top
 let divTop = document.createElement('div');
@@ -27,46 +16,24 @@ divTop.prepend(document.createElement('button'));
 let formTop = document.createElement('form');
 divTop.prepend(formTop);
 formTop.prepend(document.createElement('input'));
+formTop.firstElementChild.className = 'inputText';
+formTop.firstElementChild.type = 'text';
+
 divTop.prepend(document.createElement('button'));
 
-divTop.style.width = '100%';
-divTop.style.display = 'flex';
-divTop.style.justifyContent = 'space-between';
-divTop.style.padding = '3% 0 3% 0';
+
 //button 
 divTop.firstElementChild.innerHTML = 'Delete All';
-//form
-formTop.style.width = '60%';
-//input
-formTop.firstElementChild.type = 'text';
-formTop.firstElementChild.name = 'getToDo';
-formTop.firstElementChild.placeholder = 'Enter todo...';
-formTop.firstElementChild.style.width = '100%';
-formTop.firstElementChild.style.backgroundColor = 'white';
-formTop.firstElementChild.style.textAlign = "center";
+divTop.firstElementChild.className = 'deleteAll';
+
 //button 
 divTop.lastElementChild.innerHTML = 'Add';
-
-for (let elem of divTop.querySelectorAll('button, input')) {
-    elem.style.borderRadius = "5px";
-    elem.style.border = "solid black 2px";
-    elem.style.height = '2.75rem';
-}
-
-for (let elem of divTop.querySelectorAll(' button')) {
-    elem.style.backgroundColor = 'aqua';
-    elem.style.width = '6rem';
-};
+divTop.lastElementChild.className = 'add';
 
 //div.show
 let divShow = document.createElement('div');
 divShow.className = "show";
 divTop.after(divShow);
-
-divShow.style.width = '100%';
-divShow.style.display = 'flex';
-divShow.style.justifyContent = 'space-between';
-divShow.style.paddingBottom = '3%';
 
 divShow.append(document.createElement('span'));
 divShow.append(document.createElement('span'));
@@ -75,106 +42,254 @@ divShow.append(document.createElement('button'));
 let formShow = document.createElement('form');
 divShow.append(formShow);
 formShow.prepend(document.createElement('input'));
+formShow.firstElementChild.className = 'toText';
 
-for (let elem of divShow.querySelectorAll('button, input')) {
-    elem.style.borderRadius = "5px";
-    elem.style.border = "solid black 2px";
-    elem.style.height = '2.75rem';
-}
 
-for (let elem of divShow.querySelectorAll('button')) {
-    elem.style.width = '10rem';
-    elem.style.backgroundColor = 'aqua';
-}
-
-divShow.firstElementChild.innerHTML = 'All: 2';
-divShow.firstElementChild.nextElementSibling.innerHTML = 'Completed: 1';
+divShow.firstElementChild.className = 'all'
+divShow.firstElementChild.innerHTML = 'All:';
+divShow.firstElementChild.nextElementSibling.className = 'completed'
+divShow.firstElementChild.nextElementSibling.innerHTML = 'Completed:';
 divShow.querySelector('span + button').innerHTML = 'Show All';
 divShow.querySelector('button ~ button').innerHTML = 'Show Completed';
-divShow.lastElementChild.style.width = '30%';
-divShow.lastElementChild.firstElementChild.style.width = '100%';
-divShow.lastElementChild.firstElementChild.placeholder = 'Search...';
-divShow.lastElementChild.firstElementChild.style.textAlign = 'center';
+
 
 //div .todo
 let divTodo = document.createElement('div');
 divTodo.className = "todo";
 divShow.after(divTodo);
-divTodo.style.width = '100%';
 //ul
 let ul_td = document.createElement('ul');
 divTodo.prepend(ul_td);
+
+// Вариант № 1 (если раскомментировать)
+/*ul_td.innerHTML = getItem('data_myUl');
+
 //li
-let li_td = document.createElement('li');
-ul_td.prepend(li_td);
+function addLi(myText) {
+    ul_td.insertAdjacentHTML('afterbegin', `<li>
+                        <div class="todo-li">
+                            <div>
+                                <input type="checkbox" class="check">
+                                <div><span class="doToText">${myText}</span></div>
+                                <button class="close">x</button>
+                            </div>
+                            <div>
+                                <div><span class="date">${new Date().toLocaleString()}</span></div>
+                            </div>
+                        </div>
+                    </li>`);
 
-li_td.prepend(document.createElement('div'));
-li_td.style.border = "solid black 2px";
-li_td.style.borderRadius = "5px";
-li_td.style.marginBottom = "5%";
-//div.todo-li
-li_td.firstElementChild.className = "todo-li";
-li_td.firstElementChild.prepend(document.createElement('div'));
-li_td.firstElementChild.prepend(document.createElement('div'));
+    setItem('data_myUl', ul_td.innerHTML);
+}
 
-li_td.firstElementChild.style.display = 'flex';
-li_td.firstElementChild.style.justifyContent = 'space-between';
-//div
-let el = li_td.querySelector('.todo-li > div:first-child');
-el.prepend(document.createElement('input'));
-el.prepend(document.createElement('input'));
-el.style.width = '90%';
-el.style.marginLeft = '1%';
-el.style.padding = '3% 0 3% 0';
-//input
-el.firstElementChild.type = 'checkbox';
-el.firstElementChild.name = 'check1';
-el.firstElementChild.style.width = '2rem';
+function test() {
+    alert('Hello');
+}
 
-//input
-el.lastElementChild.type = 'text';
-el.lastElementChild.name = 'todo_text1';
-el.lastElementChild.placeholder = 'Todo Text';
-el.lastElementChild.style.backgroundColor = 'white';
-el.lastElementChild.style.borderRadius = '5px';
-el.lastElementChild.style.textAlign = 'center';
-el.lastElementChild.style.height = '2.75rem';
-el.lastElementChild.style.width = '80%';
+function onCheck(event) {
+    if (event.target.className === 'check') {
+        test();
+    }
+}
 
-//div
-let el_l = li_td.querySelector('.todo-li > div:last-child');
-el_l.prepend(document.createElement('button'));
-el_l.prepend(document.createElement('button'));
+function onAddLi(event) {
+    if (event.target.className === 'add') {
+        let val = document.querySelector('.inputText').value;
+        addLi(val);
+    }
+}
+function onDelLi(event) {
+    if (event.target.className === 'close') {
+        event.target.closest('li').remove();
+    }
+    setItem('data_myUl', ul_td.innerHTML);
+}
 
-el_l.style.width = '10%';
-el_l.style.display = 'flex';
-el_l.style.flexDirection = 'column';
-el_l.style.justifyContent = 'space-between';
-el_l.style.alignItems = 'flex-end';
-//button
-el_l.firstElementChild.innerHTML = 'x';
-el_l.firstElementChild.className = 'close';
-el_l.firstElementChild.style.backgroundColor = 'aqua';
-el_l.firstElementChild.style.border = 'solid black 2px';
-el_l.firstElementChild.style.width = '2rem';
-//button
-el_l.lastElementChild.innerHTML = 'Date'
-el_l.lastElementChild.className = 'date'
-el_l.lastElementChild.style.backgroundColor = 'white';
-el_l.lastElementChild.style.width = '5rem';
+function onDelAllLi(event) {
+    if (event.target.className === 'deleteAll') {
+        ul_td.innerHTML = '';
+    }
+    setItem('data_myUl', ul_td.innerHTML);
+}
 
-for (let elem of el_l.querySelectorAll('button')) {
-    elem.style.borderRadius = "5px";
-    elem.style.margin = "10%";
-    elem.style.height = '2rem';
+function onChecked(event) {
+    if (event.target.className === 'check') {
+        event.target.checked ?
+            event.target.nextElementSibling.style.textDecoration = 'line-through' :
+            event.target.nextElementSibling.style.textDecoration = 'none';
+
+    }
+}
+
+function onStor(event) {
+    if (event.key === 'data_myUl') {
+        ul_td.innerHTML = `${event.newValue}`
+    }
+}
+
+function setItem(key, item) {
+    try {
+        localStorage.setItem(key, item);
+    }
+    catch (e) {
+        console.error(e)
+    }
+}
+
+function getItem(key) {
+    try {
+        return localStorage.getItem(key);
+    }
+    catch (e) {
+        console.error(e)
+    }
+}
+
+document.querySelector('.add').addEventListener('click', onAddLi);
+document.querySelector('.deleteAll').addEventListener('click', onDelAllLi);
+document.querySelector('ul').addEventListener('click', onDelLi);
+//document.querySelector('ul').addEventListener('change', onChecked); //onCheck
+window.addEventListener('storage', onStor);
+*/
+
+
+// Вариант № 2
+let myLi = [];
+let htmlStr = '';
+let maxId = getMax(myLi);
+
+
+let storageItem = getItem('data_myUl');
+console.log(storageItem);
+if (storageItem) {
+    myLi = storageItem;
+    render(myLi);
+}
+
+function getMax(myObj) {
+    let tempPer = 0;
+    for (let i = 0; i < myObj.length; i++) {
+        tempPer = Math.max(tempPer, myObj[i].id);
+    }
+    return tempPer;
 }
 
 
-ul_td.appendChild(li_td.cloneNode(true));
-ul_td.lastElementChild.querySelector('input[type = checkbox]').name = 'check2';
-ul_td.lastElementChild.querySelector('input ~ input').name = 'todo_text2';
+function addLi(text) {
+    let myTemp = {
+        id: ++maxId,
+        text: text,
+        data: new Date().toLocaleString(),
+        isCheck: false,
+    }
 
+    myLi.push(myTemp);
 
+    htmlStr += addLihtml(maxId, text, myTemp.data, myTemp.isCheck);
+}
+function addLihtml(id, text, data, isCheck) {
+    return `<li id="${id}">
+                        <div class="todo-li">
+                            <div>
+                                <input type="checkbox" class="check" ${isCheck ? 'checked' : ''}>
+                                <div><span class="doToText">${text}</span></div>
+                                <button class="close">x</button>
+                            </div>
+                            <div>
+                                <div><span class="date">${data}</span></div>
+                            </div>
+                        </div>
+                    </li>`
+}
+
+function delLi(id) {
+    myLi = myLi.filter(item => item.id != id);
+    render(myLi);
+}
+
+function render(myLi) {
+    htmlStr = '';
+    if (myLi.length) {
+        for (let i = 0; i < myLi.length; i++) {
+            htmlStr += addLihtml(myLi[i].id, myLi[i].text, myLi[i].data, myLi[i].isCheck);
+        }
+    }
+    ul_td.innerHTML = htmlStr;
+}
+function isCheck(elem) {
+    let tempPer = elem.closest('li').id;
+    for (let i = 0; i < myLi.length; i++) {
+        if (myLi[i].id == tempPer) {
+            myLi[i].isCheck = elem.checked;
+            break;
+        }
+    }
+    render(myLi);
+}
+
+function onAddLi(event) {
+    if (event.target.className === 'add') {
+        let val = document.querySelector('.inputText').value;
+        addLi(val);
+    }
+    document.querySelector('.inputText').value = '';
+    render(myLi);
+    setItem('data_myUl', JSON.stringify(myLi));
+}
+
+function onDelAllLi(event) {
+    if (event.target.className === 'deleteAll') {
+        ul_td.innerHTML = '';
+        myLi.length = 0;
+        maxId = 0;
+        setItem('data_myUl', JSON.stringify(myLi));
+    }
+}
+
+function onDelLi(event) {
+    if (event.target.className === 'close') {
+        delLi(event.target.closest('li').id);
+        setItem('data_myUl', JSON.stringify(myLi));
+    }
+}
+
+function onChecked(event) {
+    if (event.target.className === 'check') {
+        isCheck(event.target);
+        setItem('data_myUl', JSON.stringify(myLi));
+    }
+}
+
+function onStor(event) {
+    if (event.key === 'data_myUl') {
+        ul_td.innerHTML = htmlStr;
+    }
+}
+
+function setItem(key, item) {
+    try {
+        localStorage.setItem(key, item);
+    }
+    catch (e) {
+        console.log(e);
+    }
+}
+
+function getItem(key) {
+    try {
+        return localStorage.getItem(key) ? JSON.parse(localStorage.getItem(key)) : '';
+    }
+    catch (e) {
+        console.log(e);
+    }
+
+}
+
+document.querySelector('.add').addEventListener('click', onAddLi);
+document.querySelector('.deleteAll').addEventListener('click', onDelAllLi);
+document.querySelector('ul').addEventListener('click', onDelLi);
+document.querySelector('ul').addEventListener('click', onChecked);
+window.addEventListener('storage', onStor);
 
 
 
