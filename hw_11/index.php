@@ -34,8 +34,8 @@ ini_set('display_errors', 1);
 //Task 5
 
 //$arr = [
-//    'ru'=>['голубой', 'красный', 'зеленый'],
-//    'en'=>['blue', 'red', 'green'],
+//    'ru' => ['голубой', 'красный', 'зеленый'],
+//    'en' => ['blue', 'red', 'green'],
 //];
 //
 //echo $arr['ru'][0], $arr['ru'][1], $arr['en'][1];
@@ -203,12 +203,10 @@ $lang = 'ru';
 
 //Task 4 ADV
 
-//$message = 'hello';
-//
-//$newMes = str_split($message);
-//$lastWord = end($newMes);
-//$lastWordToUpper = strtoupper($lastWord);
-//echo $lastWordToUpper;
+$message = 'hello';
+
+$newMes = strrev(ucfirst(strrev($message)));
+echo $newMes;
 
 //Task 5 ADV
 
