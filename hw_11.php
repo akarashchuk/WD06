@@ -143,7 +143,6 @@ echo array_sum($arr);
 // for
 for ($i = 1; $i <= 100; $i++) {
     echo $i, '<br>';
-    continue;
 };
 
 //while
@@ -171,7 +170,7 @@ while ($i <= 100) {
 
 // Task 18
 
-$arr = ['green'=>'зеленый', 'red'=>'красный','blue'=>'голубой'];
+$arr = ['green' => 'зеленый', 'red' => 'красный', 'blue' => 'голубой'];
 foreach ($arr as $key => $item) {
     echo $key, ' - ', $item, '<br>';
 };
@@ -195,7 +194,9 @@ echo array_sum(str_split($num));
 // Task 4
 
 $message = 'hello';
-echo ucfirst($message);
+$reverse = strrev($message);
+$upperFirst = strrev(ucfirst($reverse));
+echo $upperFirst;
 
 // Task 5
 
