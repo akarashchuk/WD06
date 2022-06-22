@@ -132,7 +132,7 @@ function deleteItem(event) {
 }
 
 window.addEventListener('storage', event => {
-    toDoItems = JSON.parse(event.newValue);
+    if (event.key === 'Tasks') toDoItems = JSON.parse(event.newValue);
     renderList();
 });
 
