@@ -14,6 +14,7 @@ let todoItemElems = [];
 function Task(description) {
     this.description = description; // описание задачи
     this.completed = false; // по умолчанию задача не выполнена (uncheck)
+    this.datetask = getUserTime() ;
 }
 
 //создание шаблона для каждой отдельной задачи
@@ -27,7 +28,7 @@ const createTemplate = (task,index) => {
             <div class = "description"> ${task.description}</div>
             <div class = "buttons">
             <button onclick = "deleteTask(${index})" class = "btn-delete"> Delete </button>
-            <div class="date-task">${getUserTime()}</div> 
+            <div class = "date-task"> ${task.datetask}</div> 
         </div>
     </div>
     `
@@ -38,8 +39,9 @@ function getUserTime(t = new Date()) {
     let Y = t.getFullYear();
     let M = t.getMonth() + 1;
     let D = t.getDate();
-
-    return `${Y}/${M}/${D}`
+    let H = t.getHours();
+    let Mi = t.getMinutes();
+    return `${Y}/${M}/${D}<br> time ${H}:${Mi}`
 }
 
 //фильтр для сбрасывания выполненных задач вниз
@@ -99,7 +101,7 @@ const deleteTask = index => {
 
 delAllButton.addEventListener('click', () => {
     todosWrapper.innerHTML = "";
-    tasks.splice(todosWrapper);
+    tasks = [];
     updateLocal();
 })
 
