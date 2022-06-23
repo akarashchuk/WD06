@@ -1,7 +1,7 @@
 <?php
 
 error_reporting(E_ALL);
-ini_set('display_errors',1);
+ini_set('display_errors', 1);
 
 /*///////////////////////////////// NORMAL LEVEL ///////////////////////////////////////////////// */
 
@@ -22,7 +22,7 @@ $student = [
 
 /*
 //Task 3
-$message ='Hello';
+$message = 'Hello';
 
 echo $message[0] . $message[1] . $message[4];
 */
@@ -30,10 +30,10 @@ echo $message[0] . $message[1] . $message[4];
 /*
 //Task 4
 //$arr = [1, 2, 3, 4, 5];
-$arr = array (1, 2, 3, 4, 5);
+$arr = array(1, 2, 3, 4, 5);
 echo '<pre>';
 print_r($arr);
-echo  '</pre>';
+echo '</pre>';
 */
 
 /*
@@ -78,7 +78,7 @@ switch ($lang) {
         $arr = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
         break;
     default:
-       echo 'Выберите не эльфийский язык)))';
+        echo 'Выберите не эльфийский язык)))';
         break;
 }
 print_r($arr);
@@ -89,8 +89,8 @@ print_r($arr);
 $lang = 'ru';
 
 $dayweek = match ($lang) {
-    'ru' => $arr = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
-    'en' => $arr = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+    'ru' => ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
+    'en' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
 }
 print_r($arr);
 */
@@ -115,7 +115,7 @@ $numbers = [1, 2, 3];
 $letters = ['a', 'b', 'c'];
 
 print_r(array_merge($numbers, $letters)); // 1 способ
-print_r($fullArr = [...$numbers, ...$letters]); // 2 способ
+print_r([...$numbers, ...$letters]); // 2 способ
 */
 
 /*
@@ -173,7 +173,7 @@ for ($i = 1; $i < 101; $i++) {
 /*
 // через while
 $i = 1;
-while ($i <101) {
+while ($i < 101) {
     echo $i, PHP_EOL;
     $i++;
 };
@@ -190,7 +190,7 @@ for ($i = 0; $i < 101; $i += 2) {
 /*
 // через while
 $i = 0;
-while ($i <101) {
+while ($i < 101) {
     echo $i, PHP_EOL;
     $i += 2;
 };
@@ -240,7 +240,7 @@ echo $message;
 $keys = range('a', 'z');
 $values = range(1, 26);
 //array_combine — Создаёт новый массив, используя один массив в качестве ключей, а другой для его значений
-$arr = array_combine($keys, $values); 
+$arr = array_combine($keys, $values);
 
 print_r($arr);
 */
