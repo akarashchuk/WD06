@@ -25,7 +25,7 @@ $message = 'Hello';
 
 echo $message[0], PHP_EOL;
 echo $message[1], PHP_EOL;
-echo $message[strlen($message)-1], PHP_EOL;
+echo $message[strlen($message) - 1], PHP_EOL;
 
 // Task 4
 
@@ -35,8 +35,8 @@ $arr = array(1, 2, 3, 4, 5);
 // Task 5
 
 $arr = [
-    'ru'=>['голубой', 'красный', 'зеленый'],
-    'en'=>['blue', 'red', 'green'],
+    'ru' => ['голубой', 'красный', 'зеленый'],
+    'en' => ['blue', 'red', 'green'],
 ];
 
 echo $arr['ru'][0], PHP_EOL;
@@ -54,7 +54,7 @@ echo $str;
 
 $lang = 'en';
 
-if ($lang == 'ru'){
+if ($lang == 'ru') {
     $weekDays = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница'];
     echo '<pre>';
     print_r($weekDays);
@@ -98,7 +98,7 @@ echo '</pre>';
 
 // Task 8
 
-$numbers = range(1,100);
+$numbers = range(1, 100);
 $sum = array_sum($numbers);
 
 echo '<pre>';
@@ -127,7 +127,7 @@ echo '</pre>';
 
 // Task 11
 
-$arr = ['a'=>1, 'b'=>2, 'c'=>3];
+$arr = ['a' => 1, 'b' => 2, 'c' => 3];
 
 $keys = array_keys($arr);
 $values = array_values($arr);
@@ -162,7 +162,7 @@ echo '</pre>';
 
 $arr = ['html', 'css', 'php', 'js', 'mysql'];
 
-foreach ($arr as $value){
+foreach ($arr as $value) {
     echo $value, '<br>';
 }
 
@@ -178,25 +178,25 @@ echo '</pre>';
 
 // Task 16
 
-for ($i = 1; $i <= 100; $i++){
+for ($i = 1; $i <= 100; $i++) {
     echo $i, PHP_EOL;
 }
 
 $i = 1;
-while ($i <= 100){
+while ($i <= 100) {
     echo $i++, PHP_EOL;
 }
 
 // Task 17
 
-for ($i = 1; $i <= 100; $i++){
+for ($i = 1; $i <= 100; $i++) {
     if ($i % 2 === 0) {
         echo $i, PHP_EOL;
     }
 }
 
 $i = 1;
-while ($i <= 100){
+while ($i <= 100) {
     $i++;
     if ($i % 2 === 0) {
         echo $i, PHP_EOL;
@@ -205,9 +205,9 @@ while ($i <= 100){
 
 // Task 18
 
-$arr = ['green'=>'зеленый', 'red'=>'красный','blue'=>'голубой'];
+$arr = ['green' => 'зеленый', 'red' => 'красный', 'blue' => 'голубой'];
 
-foreach ($arr as $key => $value){
+foreach ($arr as $key => $value) {
     $str = $key . ' ' . '-' . ' ' . $value;
     echo '<br>', $str;
 }
@@ -216,7 +216,7 @@ foreach ($arr as $key => $value){
 
 //Task 1
 
-$arr = array_fill(0, 10,'x');
+$arr = array_fill(0, 10, 'x');
 
 echo '<pre>';
 print_r($arr);
@@ -224,7 +224,7 @@ echo '</pre>';
 
 //Task 2
 
-$sum = array_sum(range(1,100));
+$sum = array_sum(range(1, 100));
 
 print_r($sum);
 
@@ -244,10 +244,10 @@ echo strrev($message);
 
 //Task 5
 
-$keys = range('a','z' );
-$values = range(1,26);
+$keys = range('a', 'z');
+$values = range(1, 26);
 
-$arr = array_combine($keys,$values);
+$arr = array_combine($keys, $values);
 
 echo '<pre>';
 print_r($arr);
