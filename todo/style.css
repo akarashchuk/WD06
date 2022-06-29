@@ -1,0 +1,14 @@
+body {
+   padding: 0 auto;
+   margin: 0;
+}
+
+.contaner {
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+}
+
+.check {
+	text-decoration: line-through;
+}
