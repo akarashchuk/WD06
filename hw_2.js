@@ -38,10 +38,10 @@ console.log(typeof userNameChange);
 
 // Task 4
 
-let a = 1
-let b = 2
-let c = "белых медведей"
-let space = ' '
+let a = 1;
+let b = 2;
+let c = "белых медведей";
+let space = ' ';
 a = String(a);
 b = String(b);
 let valueBear = a + b + space + c;
@@ -66,7 +66,7 @@ let bool = true;
 function showType(item) {
    let type = typeof item;
    console.log(`Variable: ${item} have type: ${type}`);
-}
+};
 
 showType(number);
 showType(string);
@@ -85,3 +85,12 @@ b8 += 1;
 
 // Task 9
 
+let codeWord1 = "обернись";
+let codeWord2 = "неужели";
+let codeWord3 = "огурцы";
+let codeWord4 = "липкие";
+let codeWord5 = "?!";
+
+let cipher = codeWord1[1] + codeWord2[1] + codeWord3[1] + codeWord4[1] + codeWord5[1];
+
+console.log(cipher);
