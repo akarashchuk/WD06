@@ -19,22 +19,22 @@
 
 // // task 2
 
-// let year = 5;
-// let st = 0.17;
-// function getSum(){
+
+// function getSum(year, st){
+
 //     let i;
 //     let x = prompt(i);
 //     let sum = x * st * year;
 //     alert(sum);
 // }
-// getSum();
+// getSum(5, 0.17);
 
 
 // // task 3
 
 
-// function trimString (stroka, ot, doo){
-//     let x = stroka.slice(ot, doo);
+// function trimString (string, from, to){
+//     let x = string.slice(from, to);
 //     console.log(x);
 // }
 // trimString('asdfghjk', 2, 8);
@@ -50,10 +50,9 @@
 //     for (let i = 0; i < x.length; i++){
 //         sum += +x[i];
 //     }
-//     console.log(sum);
+//    return sum;
 // }
-// getSumNumbers(2022);
-
+// console.log(getSumNumbers(2012));
 
 
 // //task 5
@@ -70,9 +69,9 @@
 //             a++;
 //         }
 //     }
-//     console.log(sum);
+//     return sum;
 // }
-// getSum(2,4);
+// console.log(getSum(2,4));
 
 
 
@@ -81,13 +80,13 @@
 
 
 // function fooboo (x, foo, boo){
-//     if (x == true){
-//         console.log(foo);
-//     } else{
-//         console.log(boo);
-//     }
+//    if (x == true){
+//     return foo;
+//    } else {
+//     return boo;
+//    }
 // }
-// fooboo(false, 'foo', 'boo'); 
+// console.log(fooboo(false, 'hello', 'world')); 
 
 
 
@@ -130,7 +129,7 @@
 
 
 
-// //task 9
+//task 9
 // const student = {
 //     name: 'John',
 //     age: 19,
@@ -172,7 +171,8 @@
 // for (let key in salaries){
 //     sum += salaries[key];
 // }
-// console.log(sum);
+// let avsum = sum/Object.keys(salaries).length
+// console.log(avsum);
 
 
 
@@ -227,13 +227,13 @@
 // // task 17
 
 // const cats = ['Gachito', 'Tom', 'Batman'];
-// // for (let key in cats){
-// //     console.log(cats[key]);
-// // };
+
 // for (let key of cats){
 //     console.log(key);
 // }
-
+// for (let i = 0; i < cats.length; i++){
+//     console.log(cats[i]);
+// }
 
 
 
