@@ -80,19 +80,28 @@ function getWordLength(string $str): int
 
 echo getWordLength('hello, world!'), PHP_EOL;
 
-// Task 7      так, ну ответ совпал))
+// Task 7   ну оно почти работает как надо))
+
+function calcQuantityComb(int $n): int
+{
+    return ($n != 1) ? $n * calcQuantityComb($n - 1) : 1;
+}
 
 function createBiggestNumber(array $numbers): mixed
 {
     $arr = [];
+    $combinations = calcQuantityComb(count($numbers));  // что не так с функией gmp_fact()?
 
-    foreach ($numbers as $number) {
-        $firstNum = array_shift($numbers);
-        $numbers[] = $firstNum;
-        $arr[] = implode('', $numbers);
+    for ($i = 0; $i <= $combinations; $i++) {
+        shuffle($numbers);
+
+        foreach ($numbers as $number) {
+            $firstNum = array_shift($numbers);
+            $numbers[] = $firstNum;
+            $arr[] = implode('', $numbers);
+        }
     }
-
-    return (max($arr));
+    return (max(array_unique($arr)));
 }
 
 var_dump(createBiggestNumber([3, 24, 4]));
@@ -118,13 +127,15 @@ function findDigit(int $digit, $number): int
 
 echo findDigit(5, 442158755745), PHP_EOL;
 
-// Task 10
+// Task 10    //наверняка можно было проще
 
 function quantityOfElements(string $str): array
 {
-    $arrWholeString = explode(' ', mb_strtolower($str));
     $arrWords = str_word_count(mb_strtolower($str), 1);
-    $arrSymbols = array_diff($arrWholeString, $arrWords);
+    $arrSymbols = array_diff(explode(' ', mb_strtolower($str)), $arrWords);
+
+    preg_match("/\d+/", $str, $numbers);
+    $arrWords[] = implode(' ', $numbers);
 
     foreach ($arrSymbols as $symbol) {
         $arrWords[] = $symbol[strlen($symbol) - 1];
@@ -146,8 +157,8 @@ function cipherString(string $str, int $shift): string
     for ($i = 0; $i < strlen($str); $i++) {
         $symbol = ord($str[$i]) + $shift;
 
-        if ($symbol > 122) {
-            $symbol -= 26;
+        if ($symbol > 255) {
+            $symbol -= 255;
         }
 
         $newStr = $newStr . chr($symbol);
@@ -156,7 +167,7 @@ function cipherString(string $str, int $shift): string
     return $newStr;
 }
 
-echo cipherString('string', 3), PHP_EOL;
+echo cipherString('String', 3), PHP_EOL;
 
 function decipherString(string $str, int $shift): string
 {
@@ -164,8 +175,8 @@ function decipherString(string $str, int $shift): string
     for ($i = 0; $i < strlen($str); $i++) {
         $symbol = ord($str[$i]) - $shift;
 
-        if ($symbol < 97) {
-            $symbol += 26;
+        if ($symbol < $shift) {
+            $symbol = 255 - $symbol;
         }
 
         $newStr = $newStr . chr($symbol);
@@ -174,8 +185,42 @@ function decipherString(string $str, int $shift): string
     return $newStr;
 }
 
-echo decipherString('vwulqj', 3), PHP_EOL;
+echo decipherString('Vwulqj', 3), PHP_EOL;
 
-//Task 2 нот тудэй
+//Task 2
+
+function convertToRoman (int $number): string
+{
+    $convertedNum = '';
+    $romanNum = [
+        'MM' => 2000,
+        'M' => 1000,
+        'CM' => 900,
+        'D' => 500,
+        'CD' => 400,
+        'C' => 100,
+        'XC' => 90,
+        'L' => 50,
+        'XL' => 40,
+        'X' => 10,
+        'IX' => 9,
+        'V' => 5,
+        'IV' => 4,
+        'I' => 1,
+    ];
+
+while ($number > 0) {
+    foreach ($romanNum as $roman => $normal) {
+        if ($number >= $normal) {
+            $number -= $normal;
+            $convertedNum .= $roman;
+        }
+    }
+}
+    return $convertedNum;
+}
+
+echo convertToRoman(2008);
+
 
 
