@@ -1,6 +1,6 @@
 <?php
 
-//declare(strict_types=1);
+declare(strict_types=1);
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
@@ -8,20 +8,19 @@ ini_set('display_errors', '1');
 
 /*
 //Task 1
-function message()
+function message(): string
 {
-    echo '«Hello, World!»';
+    return "«Hello, World!»";
 }
 
-message();
+print_r(message());
 */
 
-/*
+
 //Task 2
-$year = 2022;
-function leapYear(): bool
+/*
+function leapYear(int $year): bool
 {
-    global $year;
     if ($year % 4 == 0) {
         return true;
     } else {
@@ -29,37 +28,35 @@ function leapYear(): bool
     }
 }
 
-var_dump(leapYear());
+var_dump(leapYear(2022));
 */
 
-/*
+
 //Task 3
-$str = 'Cascading Style Sheets';
-function abbrev()
+/*
+function abbrev(string $str): string
 {
-    global $str;
     $abbrevStr = implode('', array_diff_assoc(str_split(ucwords($str)), str_split(strtolower($str))));
-    echo $abbrevStr;
+    return $abbrevStr;
 }
 
-abbrev();
+print_r(abbrev('Cascading Style Sheets'));
 */
 
-/*
+
 //Task 4
-$strStart = 'Nastya Настя';
-function strReversed()
+/*
+function strReversed(string $strStart): string
 {
-    global $strStart;
     $strFinish = '';
     // mb_strlen - получение длины строки; mb_substr - возвращает часть строки
     for ($i = mb_strlen($strStart); $i >= 0; $i--) {
         $strFinish .= mb_substr($strStart, $i, 1);// .= - объединение строк с присвоением результата
     }
-    echo $strFinish;
+    return $strFinish;
 }
 
-strReversed();
+print_r(strReversed('Nastya Настя'));
 */
 
 /*
@@ -104,7 +101,7 @@ function maxNumArr($arr)
     if (1 === count($arr)) {
         return $arr;
     }
-    $result = array();
+    $result = [];
     foreach ($arr as $key => $item) {
         foreach (maxNumArr(array_diff_key($arr, array($key => $item))) as $newArr)
             //array_diff_key — Вычисляет расхождение массивов, сравнивая ключи
@@ -128,11 +125,7 @@ function anagramma($word1, $word2): bool
     $w1 = strlen($word1);
     $w2 = strlen($word2);
 
-    if ((!array_diff($arr1, $arr2)) and ($w1 == $w2)) {
-        return true;
-    } else {
-        return false;
-    }
+    return ((!array_diff($arr1, $arr2)) and ($w1 == $w2));
 }
 
 $word1 = 'карат';
@@ -142,20 +135,13 @@ var_dump(anagramma($word1, $word2));
 
 /*
 //Task 9
-function countNum($number, $int)
+function countNum(string $number, int $int): int
 {
-    $number = (string)$number;
-
-    for ($i = 0; $i < strlen($number); $i++) {
-        $x = $number[$i];
-
-        return substr_count($number, $int);
-    }
+    return substr_count((string)$number, (string)$int);
+    // }
 }
 
-$number = 44215;
-$int = 5;
-print_r(countNum($number, $int));
+print_r(countNum('4421555', 5));
 */
 
 /*
@@ -181,7 +167,7 @@ print_r(countWords("That's the password: PASSWORD 123!."));
 
 //шифрование
 /*
-function shifr($str, $step)
+function shifr(string $str, int $step): string
 {
     $shifrText = '';
     for ($i = 0; $i < strlen($str); $i++) {
@@ -192,18 +178,17 @@ function shifr($str, $step)
         $shifrText = $shifrText . chr($item); //chr — Генерирует односимвольную строку по заданному числу
 
     }
-    echo $shifrText;
+    return $shifrText;
 }
 
-$str = "Anastasiya";
-$step = 3; // сдвиг символов
-print_r(shifr($str, $step));
+//$step = 3; // сдвиг символов
+print_r(shifr('Anastasiya', 3));
 */
 
 
 //дешифрование
 /*
-function deshifr($shifrText, $step)
+function deshifr(string $shifrText, int $step): string
 {
     $str = '';
 
@@ -215,12 +200,10 @@ function deshifr($shifrText, $step)
         }
         $str = $str . chr($item);
     }
-    echo $str;
+    return $str;
 }
 
-$shifrText = "Dqdvwdvl|d";
-$step = 3;
-print_r(deshifr($shifrText, $step));
+print_r(deshifr('Dqdvwdvl|d', 3));
 */
 
 
