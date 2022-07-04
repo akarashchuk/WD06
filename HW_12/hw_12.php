@@ -18,7 +18,7 @@ getStr();
 //Task 2
 function getLeapYear(int $year): bool
 {
-    return !($year % 4 <> 0) && (($year % 100 <> 0 || $year % 400 == 0));
+    return ($year % 4 === 0) && (($year % 100 <> 0 || $year % 400 == 0));
 }
 
 var_dump(getLeapYear(2001));
@@ -29,7 +29,7 @@ function getAbr(string $str): string
 {
     $res = '';
     $temp = explode(' ', $str);
-    foreach ($temp as $key => $item) {
+    foreach ($temp as $item) {
         $res .= mb_strtoupper(mb_substr($item, 0, 1));
     }
     return $res;
@@ -70,20 +70,38 @@ echo "<br>";
 //Task 6
 function getLen($str): int
 {
+    $arrTemp = ['!', ':', '.', ','];
     $temp = explode(' ', $str);
     $lastWord = array_pop($temp);
-    return strlen($lastWord);
+    return in_array($lastWord[-1], $arrTemp) ? strlen(substr($lastWord, 0, -1)) : strlen($lastWord);
 }
 
-echo getLen('hello, wordl !'), "<br>";
+echo getLen('hello, wordl!'), "<br>";
 
 //Task 7
-function getMaxNum(array $arr)
+function getMaxNum(array $arr): int
 {
-    //не знаю
+    function getCombinations(array $arr): array
+    {
+        if (count($arr) <= 1) {
+            return $arr;
+        }
+        $res = [];
+        foreach ($arr as $item) {
+            $arrFiltr = array_filter($arr, fn($value) => $value !== $item);
+            $combos = getCombinations($arrFiltr);
+            foreach ($combos as $combo) {
+                $res[] = intval($item . $combo);
+            }
+        }
+        return $res;
+    }
+
+    return max(getCombinations($arr));
 }
 
 print_r(getMaxNum([3, 24, 4]));
+echo "<br>";
 
 //Task 8
 function isAnagram(string $str1, string $str2): bool
@@ -106,12 +124,59 @@ echo getCountNum(5, '442158755745'), "<br>";
 //Task 10
 function getWordCount(string $str): array
 {
-    return array_count_values(str_word_count(strtolower($str), 1, '0..9.~!@#$%^&*()-_=+{}[]\|;:?/<>.,'));
+    $arrTemp = ['!', ':', '.', ','];
+    $res = str_word_count(strtolower($str), 1, '0..9.~!@#$%^&*()-_=+{}[]\|;:?/<>.,');
+    foreach ($res as $key => $value) {
+        $i = strlen($value) - 1;
+        while ($i > 0) {
+            if (in_array($value[$i], $arrTemp)) {
+                array_push($res, $value[$i]);
+                $res[$key] = substr($value, 0, $i);
+            } else {
+                break;
+            }
+            $i--;
+        }
+    }
+
+    return array_count_values($res);
 }
 
-print_r(getWordCount("That's the password : PASSWORD 123 ! ."));
+print_r(getWordCount("That's the password: PASSWORD 123!"));
+echo "<br>";
 
 //ADVANCED level
+//Task 1
+function encryption(string $str, int $step): string
+{
+    $res = '';
+    for ($i = 0; $i < strlen($str); $i++) {
+        $item = ord($str[$i]) + $step;
+        if ($item > 122) {
+            $item = $item - 122;
+        }
+        $res .= chr($item);
+    }
+    return $res;
+}
+
+echo encryption('qwerty', 3), "<br>";
+
+
+function decryption(string $str, int $step): string
+{
+    $res = '';
+    for ($i = 0; $i < strlen($str); $i++) {
+        $item = ord($str[$i]) - $step;
+        if ($item < $step) {
+            $item = 122 - $step;
+        }
+        $res .= chr($item);
+    }
+    return $res;
+}
+
+echo decryption('tzhuw}', 3), "<br>";
 
 //Task 2
 function getRoman(int $num): string
@@ -144,5 +209,6 @@ function getRoman(int $num): string
     return $res;
 }
 
+echo "<br>";
 echo getRoman(3), "<br>";
 echo getRoman(1990), "<br>";
