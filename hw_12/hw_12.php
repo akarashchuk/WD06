@@ -9,31 +9,26 @@ ini_set('display_errors', '1');
 
 //function str()
 //{
-//    echo 'Hello, World!';
+//    return 'Hello, World!';
 //}
 //
-//str();
+//echo str();
 
 // Task 2
 
 //echo '<pre>';
 //
-//function isLeapYear($year)
+//function isLeapYear(int $year): bool
 //{
-//    if ($year % 4 == 0 && $year % 400 == 0) {
-//        echo 'Год високосный';
-//    } else {
-//        echo 'Год не високосный';
-//    }
+//    return $year % 4 == 0 && $year % 400 == 0;
 //}
-//
-//isLeapYear(2001);
+//var_dump(isLeapYear(2000));
 //
 //echo '</pre>';
 
 // Task 3
 
-//function abbreviation($longstr)
+//function abbreviation(string $longstr): string
 //{
 //    $words = explode(" ", $longstr);
 //    $abbr = "";
@@ -49,12 +44,13 @@ ini_set('display_errors', '1');
 
 // Task 4
 
-//function reverse($string)
+//function reverse(string $string): string
 //{
 //    $string = mb_str_split($string);
 //    $string = array_reverse($string);
 //    $string = implode('', $string);
-//    echo $string;
+//
+//    return $string;
 //}
 //
 //echo reverse('Привет, мир!');
@@ -81,13 +77,14 @@ ini_set('display_errors', '1');
 
 // Task 6
 
-//function countLastWord($str)
+//function countLastWord(string $str): int
 //{
 //    $str = explode(' ', $str);
 //    $lastWord = array_pop($str);
 //    $symbols = ['!', ',', ':', '.', ';'];
 //    $lastWord = str_replace($symbols, '', $lastWord);
 //    $lastWord = mb_strlen($lastWord);
+//
 //    return $lastWord;
 //}
 //
@@ -97,7 +94,7 @@ ini_set('display_errors', '1');
 
 //echo '<pre>';
 //
-//function maxNumber($arrNum)
+//function maxNumber(array $arrNum): array
 //{
 //    if (count($arrNum) <= 1) {
 //        return $arrNum;
@@ -106,7 +103,7 @@ ini_set('display_errors', '1');
 //    $new_combinations = [];
 //
 //    foreach ($arrNum as $key => $item) {
-//        foreach (maxNumber(array_diff_key($arrNum, array($key => $item))) as $newArrNum) {
+//        foreach (maxNumber(array_diff_key($arrNum, [$key => $item])) as $newArrNum) {
 //            $new_combinations[] = $item . $newArrNum;
 //        }
 //    }
@@ -115,28 +112,23 @@ ini_set('display_errors', '1');
 //
 //$arrNum = [3, 24, 4];
 //echo max(maxNumber($arrNum));
-
-echo '</pre>';
+//
+//echo '</pre>';
 
 // Task 8
 
-//function isAnagram(string $str1, $str2): bool
+//function isAnagram(string $str1, string $str2): bool
 //{
-//    if (count_chars($str1, 1) == count_chars($str2, 1)) {
-//        return true;
-//    } else {
-//        return false;
-//    }
+//    return count_chars($str1, 1) == count_chars($str2, 1);
 //}
 //
 //var_dump(isAnagram('ропот', 'топор'));
 
 // Task 9
 
-//function countNum(int $num, int $searchNum)
+//function countNum(int $num, int $searchNum): int
 //{
-//    $count = mb_substr_count((string)$num, (string)$searchNum);
-//    return 'Цифра ' . $searchNum . ' ' . 'в числе ' . $num . ' ' . 'встречается ' . $count . ' ' . 'раз(а)';
+//    return mb_substr_count("$num", "$searchNum");
 //}
 //
 //echo countNum(4564544432368, 4);
@@ -151,10 +143,10 @@ echo '</pre>';
 //    $phrase = mb_strtolower(str_replace($symbols, $_symbols, $phrase));
 //    $array = explode(' ', $phrase);
 //
-//    print_r(array_count_values($array));
+//    return array_count_values($array);
 //}
 //
-//echo entryWord("That's the password: PASSWORD 123!");
+//echo print_r(entryWord("That's the password: PASSWORD 123!"));
 //
 //echo '</pre>';
 
@@ -162,7 +154,7 @@ echo '</pre>';
 
 //Task 1
 
-//function cipherCode(string $word, int $shift)
+//function cipherCode(string $word, int $shift): string
 //{
 //    $newWord = '';
 //
@@ -173,13 +165,13 @@ echo '</pre>';
 //        }
 //        $newWord .= chr($symbol);
 //    }
-//    echo $newWord . '<br>';
+//    return $newWord . '<br>';
 //}
 //
-//cipherCode('Teach Me Skills', 3);
+//echo cipherCode('Teach Me Skills', 3);
 //
 //
-//function cipherDecode(string $word, int $shift)
+//function cipherDecode(string $word, int $shift): string
 //{
 //    $oldWord = '';
 //    for ($i = 0; $i < strlen($word); $i++) {
@@ -189,10 +181,10 @@ echo '</pre>';
 //        }
 //        $oldWord .= chr($symbol);
 //    }
-//    echo $oldWord;
+//    return $oldWord;
 //}
 //
-//cipherDecode('Whdfk#Ph#Vnloov', 3);
+//echo cipherDecode('Whdfk#Ph#Vnloov', 3);
 
 //Task 2
 
@@ -209,7 +201,7 @@ echo '</pre>';
 //
 //echo toRoman(2022);
 //
-//function toRoman(int $num): string
+//function toRoman2(int $num): string
 //{
 //    $arrRomanNum = [
 //        'M' => 1000,
@@ -241,6 +233,6 @@ echo '</pre>';
 //    return 'Год римскими цифрами: ' . $endValue;
 //}
 //
-//echo toRoman(2022);
+//echo toRoman2(2022);
 //
 //echo '</pre>';
