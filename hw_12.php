@@ -46,7 +46,7 @@ function reverseString(string $str): string
 {
     $arr = mb_str_split($str);
 
-    return join('', array_reverse($arr));
+    return implode('', array_reverse($arr));
 }
 
 echo reverseString('Привет мир!'), PHP_EOL;
@@ -55,15 +55,13 @@ echo reverseString('Привет мир!'), PHP_EOL;
 
 function checkPrimeNumber(int $num): bool
 {
-    $result = true;
-
     for ($i = 2; $i < $num; $i++) {
         if ($num % $i === 0) {
-            $result = false;
+            return false;
         }
     }
 
-    return $result;
+    return true;
 }
 
 var_dump(checkPrimeNumber(7));
@@ -80,31 +78,33 @@ function getWordLength(string $str): int
 
 echo getWordLength('hello, world!'), PHP_EOL;
 
-// Task 7   ну оно почти работает как надо))
+// Task 7
 
-function calcQuantityComb(int $n): int
+function combinations(array $numbers): array
 {
-    return ($n != 1) ? $n * calcQuantityComb($n - 1) : 1;
-}
+    if (count($numbers) <= 1) {
+        return $numbers;
+    }
 
-function createBiggestNumber(array $numbers): mixed
-{
     $arr = [];
-    $combinations = calcQuantityComb(count($numbers));  // что не так с функией gmp_fact()?
 
-    for ($i = 0; $i <= $combinations; $i++) {
-        shuffle($numbers);
+    foreach ($numbers as $key => $number) {
+        $combos = combinations(array_diff_key($numbers, [$key => $number]));
 
-        foreach ($numbers as $number) {
-            $firstNum = array_shift($numbers);
-            $numbers[] = $firstNum;
-            $arr[] = implode('', $numbers);
+        foreach ($combos as $combo) {
+            $arr[] = $number . $combo;
         }
     }
-    return (max(array_unique($arr)));
+
+    return $arr;
 }
 
-var_dump(createBiggestNumber([3, 24, 4]));
+function getMax(array $numbers): int
+{
+    return max(array_map('intval', combinations($numbers)));
+}
+
+var_dump(getMax([3, 24, 4]));
 
 // Task 8
 
@@ -127,7 +127,7 @@ function findDigit(int $digit, $number): int
 
 echo findDigit(5, 442158755745), PHP_EOL;
 
-// Task 10    //наверняка можно было проще
+// Task 10
 
 function quantityOfElements(string $str): array
 {
@@ -189,7 +189,7 @@ echo decipherString('Vwulqj', 3), PHP_EOL;
 
 //Task 2
 
-function convertToRoman (int $number): string
+function convertToRoman(int $number): string
 {
     $convertedNum = '';
     $romanNum = [
@@ -209,18 +209,15 @@ function convertToRoman (int $number): string
         'I' => 1,
     ];
 
-while ($number > 0) {
-    foreach ($romanNum as $roman => $normal) {
-        if ($number >= $normal) {
-            $number -= $normal;
-            $convertedNum .= $roman;
+    while ($number > 0) {
+        foreach ($romanNum as $roman => $normal) {
+            if ($number >= $normal) {
+                $number -= $normal;
+                $convertedNum .= $roman;
+            }
         }
     }
-}
     return $convertedNum;
 }
 
 echo convertToRoman(2008);
-
-
-
