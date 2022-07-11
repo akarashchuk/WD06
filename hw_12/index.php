@@ -8,14 +8,13 @@ ini_set('display_errors', '1');
 
 /*
 //Task 1
-function message(): string
+function message()
 {
     return "«Hello, World!»";
 }
 
 print_r(message());
 */
-
 
 //Task 2
 /*
@@ -31,9 +30,8 @@ function leapYear(int $year): bool
 var_dump(leapYear(2022));
 */
 
-
-//Task 3
 /*
+//Task 3
 function abbrev(string $str): string
 {
     $abbrevStr = implode('', array_diff_assoc(str_split(ucwords($str)), str_split(strtolower($str))));
@@ -43,9 +41,8 @@ function abbrev(string $str): string
 print_r(abbrev('Cascading Style Sheets'));
 */
 
-
-//Task 4
 /*
+//Task 4
 function strReversed(string $strStart): string
 {
     $strFinish = '';
@@ -66,11 +63,8 @@ function IsPrime($a): bool
     for ($i = 2; $i < $a; $i++) {
         if ($a % $i == 0) {
             return false;
-        } else {
-            return true;
         }
     }
-
     if ($a == 0) {
         return false;
     } else {
@@ -78,20 +72,21 @@ function IsPrime($a): bool
     }
 }
 
-var_dump(isPrime(6));
+var_dump(isPrime(25));
 */
 
 /*
 //Task 6
-function wordLenFinish($str)
+function wordLenFinish(string $str): int
 {
     $arrNewWord = explode(" ", $str,); //explode — Разбивает строку с помощью разделителя
     $strFinish = rtrim(end($arrNewWord), '!@#$%^&*()_+"№;%:?=-');
 //rtrim-убирает пробелы и заданные символы справа  // end-выводит последний элемент массива
-    echo iconv_strlen($strFinish); //iconv_strlen — Возвращает количество символов в строке
+    return iconv_strlen($strFinish); //iconv_strlen — Возвращает количество символов в строке
+
 }
 
-wordLenFinish('задание №6 PHP!');
+var_dump(wordLenFinish('задание №6 PHP!'));
 */
 
 /*
@@ -102,9 +97,13 @@ function maxNumArr($arr)
         return $arr;
     }
     $result = [];
+
     foreach ($arr as $key => $item) {
-        foreach (maxNumArr(array_diff_key($arr, array($key => $item))) as $newArr)
-            //array_diff_key — Вычисляет расхождение массивов, сравнивая ключи
+        foreach (
+            maxNumArr(
+                array_diff_key($arr, array($key => $item))
+            ) as $newArr
+        ) //array_diff_key — Вычисляет расхождение массивов, сравнивая ключи
         {
             $result[] = $item . $newArr;
         }
@@ -118,30 +117,26 @@ echo max(maxNumArr($arr));
 
 /*
 //Task 8
-function anagramma($word1, $word2): bool
+function anagramma(string $word1, string $word2): bool
 {
     $arr1 = str_split($word1);
     $arr2 = str_split($word2);
     $w1 = strlen($word1);
     $w2 = strlen($word2);
-
-    return ((!array_diff($arr1, $arr2)) and ($w1 == $w2));
+    return !array_diff($arr1, $arr2) && ($w1 == $w2);
 }
 
-$word1 = 'карат';
-$word2 = 'карта';
-var_dump(anagramma($word1, $word2));
+var_dump(anagramma('карат', 'карта'));
 */
 
 /*
 //Task 9
-function countNum(string $number, int $int): int
+function countNum($number, $int): int
 {
     return substr_count((string)$number, (string)$int);
-    // }
 }
 
-print_r(countNum('4421555', 5));
+print_r(countNum(442155, 5));
 */
 
 /*
@@ -176,12 +171,10 @@ function shifr(string $str, int $step): string
             $item = $item - 255;
         }
         $shifrText = $shifrText . chr($item); //chr — Генерирует односимвольную строку по заданному числу
-
     }
     return $shifrText;
 }
 
-//$step = 3; // сдвиг символов
 print_r(shifr('Anastasiya', 3));
 */
 
@@ -191,10 +184,8 @@ print_r(shifr('Anastasiya', 3));
 function deshifr(string $shifrText, int $step): string
 {
     $str = '';
-
     for ($i = 0; $i < strlen($shifrText); $i++) {
         $item = ord($shifrText[$i]) - $step;
-
         if ($item < $step) {
             $item = 255 - $step;
         }
@@ -227,15 +218,11 @@ function convNum($num)
         'IV' => 4,
         'I' => 1
     ];
-
     foreach ($rimItem as $rim => $arNum) {
         $sootv = intval($num / $arNum);
         $result .= str_repeat($rim, $sootv); //str_repeat — Возвращает повторяющуюся строку(совпадение)
         $num = $num % $arNum;
     }
-
     return $result;
 }
-
 print_r(convNum(1990));
-*/
