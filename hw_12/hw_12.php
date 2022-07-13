@@ -7,7 +7,6 @@ error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
 //Task 1
-//
 //function writeMsg(): string
 //{
 //    return "Hello, World!";
@@ -19,11 +18,7 @@ ini_set('display_errors', '1');
 //Task 2
 //function leapYear(int $year): bool
 //{
-//    if (($year > 0 && $year % 4 === 0 && $year % 100 != 0) || ($year % 400 === 0 && $year % 100 === 0)) {
-//        return true;
-//    } else {
-//        return false;
-//    }
+//    return ($year > 0 && $year % 4 === 0 && $year % 100 != 0) || ($year % 400 === 0 && $year % 100 === 0);
 //}
 //
 //var_dump(leapYear(2076));
@@ -56,25 +51,25 @@ ini_set('display_errors', '1');
 //    }
 //    return $sep;
 //}
+//
 //echo backward($str);
 
-//Task 5
+
+////Task 5
 //function getPrime(int $numb): bool
 //{
 //    if ($numb < 1) {
 //        return false;
 //    }
-//    for ($i = 2; $i * $i <= $numb; $i++) {
+//    for ($i = 2; $i <= sqrt($numb); $i++) {
 //        if ($numb % $i === 0) {
 //            return false;
-//        } else {
-//            return true;
 //        }
 //    }
 //    return true;
 //}
 //
-//var_dump(getPrime(7));
+//var_dump(getPrime(653));
 
 
 //Task 6
@@ -86,30 +81,30 @@ ini_set('display_errors', '1');
 //}
 //
 //echo lengthString('hello, world!');
-
+//
 
 //Task 7
 //$numbers = [3, 24, 4];
-//$amount = count($numbers);
-//$fact = factorial($amount);
-//
-//while ((boolean)$amount) {
-//    for ($k = (count($numbers) - 1); $k; $k--) {
-//        list($numbers[$k], $numbers[$k - 1]) = [$numbers[$k - 1], $numbers[$k]];
-//        $arrRes[] = implode("",$numbers);
-//    }
-//    $amount--;
-//}
-//
-//echo max($arrRes);
-//
-//function factorial($n)
+//function factorial(array $numbers): array
 //{
-//    $total = 1;
-//    for ($i=2; $i<=$n; $i++)
-//        $total = $total * $i;
-//    return $total;
+//    if (count($numbers) <= 1) {
+//        return $numbers;
+//    }
+//    $newNumber = [];
+//    foreach ($numbers as $key => $value) {
+//        foreach (
+//            factorial(
+//                array_diff_key($numbers, array($key => $value))
+//            ) as $newValue
+//        ) {
+//            $newNumber[] = $value . $newValue;
+//        }
+//    }
+//    return $newNumber;
 //}
+//
+//echo max(factorial($numbers));
+
 
 //Task 8
 //function anagramm(string $a, string $b): bool
@@ -119,6 +114,7 @@ ini_set('display_errors', '1');
 //
 //var_dump(anagramm('норматив', 'минотавр'));
 
+
 //Task 9
 //function meet(int $search, $number): int
 //{
@@ -127,8 +123,8 @@ ini_set('display_errors', '1');
 //
 //echo meet(5, 442158755745);
 
-//Task 10
 
+//Task 10
 //function words($phrase): array
 //{
 //    $signs_1 = ['!', ',', ':', '.', ';'];
@@ -143,4 +139,4 @@ ini_set('display_errors', '1');
 //print_r(words("That's the password: PASSWORD 123!"));
 //echo '<pre>';
 
-?>
+?> 
