@@ -9,25 +9,28 @@
 <!--</body>-->
 <!--</html>-->
 <?php
-// task 2
-//function coun(){
+//// task 2
+//function coun()
+//{
 //    $size = fopen(__DIR__ . '/hello_files.txt', 'r');
 //    $count = 0;
-//    while (!feof($size)){
+//    while (!feof($size)) {
 //        fgets($size);
 //        $count++;
 //    }
 //    fclose($size);
-//    var_dump($count);
+//    return $count;
 //}
+//var_dump(coun());
 
 
-
-//function coun(){
+//function coun()
+//{
 //    $size = count(file(__DIR__ . '/hello_files.txt'));
-//    var_dump($size);
+//    return $size;
 //}
-//coun();
+//var_dump(coun());
+
 
 
 
@@ -51,7 +54,7 @@
 //
 //        echo $file . '<br>';
 //
-//        if(is_dir($path)) {
+//        if (is_dir($path)) {
 //            scan_dir($path, $level + 1);
 //        }
 //    }
@@ -65,32 +68,32 @@
 
 // task 4
 
-//function x(){
-//    $size = filesize(__DIR__. '/hw12.php');
-//    $mbsize = $size/1048576;
-//    echo $mbsize . ' ' . 'МБ';
+//function x()
+//{
+//    $size = filesize(__DIR__ . '/hw13.php');
+//    $mbsize = $size / 1048576;
+//    return $mbsize . ' ' . 'МБ';
 //}
 //
-//x();
+//echo x();
 
 
 
 // advanced
 // task 1
-//if (isset($_POST['submit'])){
+//if (isset($_POST['submit'])) {
 //    $targetPath = __DIR__ . '/imgs';
-//    if (!file_exists($targetPath)){
+//    if (!file_exists($targetPath)) {
 //        mkdir($targetPath);
 //    }
 //    $types = ['image/jpeg', 'image/png'];
 //    $filename = $_FILES['image']['name'];
-//    if ($_FILES['size'] > 5 * 1024 **2){
+//    if ($_FILES['size'] > 5 * 1024 ** 2) {
 //        exit('Размер файла более 5мб');
 //    }
 //    if (!in_array($_FILES['type'], $types)) {
 //        exit('Необходим файл типа jpeg или png');
-//    }
-//    else{
+//    } else {
 //        move_uploaded_file($_FILES['image']['tmp_name'], "$targetPath/$filename");
 //    }
 //}
