@@ -6,10 +6,13 @@ error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
 
-// task 1
-//function x() {
+//task 1
+//function x()
+//{
 //    return "Hello world";
-//};
+//}
+//
+//;
 //echo x();
 
 
@@ -17,85 +20,88 @@ ini_set('display_errors', '1');
 
 // task 2
 
-//function year( int $days) : bool {
-//    $x = '';
-//    if ($days == 365) {
-//        $x = false;
-//    } elseif ($days == 366) {
-//        $x = true;
-//    }
-//    return $x;
+//function year($year): bool
+//{
+//    return $year % 4 == 0 && $year % 100 == 0 && $year % 400 == 0;
 //}
 //
-//var_dump(year(366));
-
-
+//var_dump(year(1700));
 
 // task 3
 
-//function qwe(){
+//function qwe()
+//{
 //    $x = explode(' ', 'Cascading Style Sheets');
 //    $y = '';
-//    foreach ($x as $i){
+//    foreach ($x as $i) {
 //        $y .= $i[0];
 //    }
-//    echo $y;
+//    return $y;
 //}
-//qwe();
+//
+//echo qwe();
 
 
 
 //// task 4
 //
-//function rev($x){
-//    $y = mb_convert_encoding(strrev(mb_convert_encoding($x, 'UTF-16BE', 'UTF-8')),'UTF-8', 'UTF-16LE');
+//function rev($x)
+//{
+//    $y = mb_convert_encoding(strrev(mb_convert_encoding($x, 'UTF-16BE', 'UTF-8')), 'UTF-8', 'UTF-16LE');
 //    echo $y;
-//};
+//}
+//
+//;
 //rev('Привет мир');
 
 
 
 // task 5
-//function easy(int $x) : bool
+//function easy(int $x): bool
 //{
 //    $y = ' ';
-//    for ($i = 2; $i < $x; $i++){
-//        if ($x % $i === 0){
+//    for ($i = 2; $i < $x; $i++) {
+//        if ($x % $i === 0) {
 //            $y = false;
-//        } else{
+//        } else {
 //            $y = true;
 //        }
 //        break;
 //    }
 //    return $y;
-//};
+//}
+//
+//;
 //var_dump(easy(17));
 
 
 
 
 //// task 6
-//function lastWord(){
+//function lastWord()
+//{
 //    $x = explode(' ', 'jngoiregn engrengo iisfi');
 //    $y = strlen(array_pop($x));
 //    echo $y;
 //}
+//
 //lastWord();
 
 
 //
 //// task 8
-//function anagr($x, $y) : bool
+//function anagr($x, $y): bool
 //{
 //    $z = ' ';
-//   if(count_chars($x) == count_chars($y)){
-//       $z = true;
-//   } else{
-//       $z = false;
-//   }
+//    if (count_chars($x) == count_chars($y)) {
+//        $z = true;
+//    } else {
+//        $z = false;
+//    }
 //
-//   return $z;
+//    return $z;
 //}
+//
 //var_dump(anagr('cat', 'tac'));
 
 
@@ -103,12 +109,14 @@ ini_set('display_errors', '1');
 
 //// task 9
 //
-//function coun($x, $y){
+//function coun($x, $y)
+//{
 //    $a = (string)$x;
 //    $b = (string)$y;
 //    $count = substr_count($a, $b);
 //    echo $count;
 //}
+//
 //coun(11114898411, 1);
 
 
@@ -117,10 +125,12 @@ ini_set('display_errors', '1');
 
 //// task 10
 //
-//function coun($x, $y){
+//function coun($x, $y)
+//{
 //    $count = substr_count(mb_strtolower($x), mb_strtolower($y));
 //    echo $count;
 //}
+//
 //coun('one two One oNe uno two', 'onE');
 
 
@@ -173,42 +183,47 @@ ini_set('display_errors', '1');
 // КОДИРОВКА
 //$text = 'abcde';
 //$shift = 3;
-//$x = function () use ($text, $shift){
-//    for ($i=0; $i<strlen($text); $i++)  {
-//        $symbol=ord($text[$i])+$shift;
-//        if($symbol>255)  {
-//            $symbol=$symbol-255;
+//$x = function () use ($text, $shift) {
+//    for ($i = 0; $i < strlen($text); $i++) {
+//        $symbol = ord($text[$i]) + $shift;
+//        if ($symbol > 255) {
+//            $symbol = $symbol - 255;
 //        }
 //        global $codeText;
-//       $codeText = chr($symbol);
+//        $codeText = chr($symbol);
 //        echo $codeText;
-//
 //    }
 //};
 //$x();
 //echo "<pre>";
+// я не знаю, как сделать так,чтобы возвращала
 //// РАСКОДИРОВКА
-//function decod($newText, $shift){
-//    for($i=0; $i<strlen($newText); $i++)  {
-//        $symbol=ord($newText[$i])-$shift;
-//        if($symbol<$shift)  {
-//            $symbol=255-$shift;
+//function decod($newText, $shift)
+//{
+//    for ($i = 0; $i < strlen($newText); $i++) {
+//        $symbol = ord($newText[$i]) - $shift;
+//        if ($symbol < $shift) {
+//            $symbol = 255 - $shift;
 //        }
 //        $text = chr($symbol);
 //        echo $text;
-//}};
+//    }
+//}
+
+;
 //decod('defgh', 3);
 
 
 
 // task 2
 
-function int2roman($n) {
-    $M = ["","M","MM","MMM"];
-    $C = ["","C","CC","CCC","CD","D","DC","DCC","DCCC","CM"];
-    $X = ["","X","XX","XXX","XL","L","LX","LXX","LXXX","XC"];
-    $I = ["","I","II","III","IV","V","VI","VII","VIII","IX"];
-    return $M[$n/1000].$C[($n % 1000)/100].$X[($n % 100)/10].$I[($n % 10)];
-
-}
-echo int2roman(153);
+//function int2roman($n)
+//{
+//    $M = ["", "M", "MM", "MMM"];
+//    $C = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"];
+//    $X = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"];
+//    $I = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"];
+//    return $M[$n / 1000] . $C[($n % 1000) / 100] . $X[($n % 100) / 10] . $I[($n % 10)];
+//}
+//
+//echo int2roman(153);
